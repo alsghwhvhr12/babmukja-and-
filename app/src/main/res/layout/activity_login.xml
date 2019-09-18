@@ -8,7 +8,7 @@
 
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/etId"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="31dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/etPassword"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
@@ -30,10 +30,10 @@
         android:hint="   비밀번호"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText1" />
+        app:layout_constraintTop_toBottomOf="@+id/etId" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnLogin"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginStart="105dp"
@@ -43,10 +43,10 @@
         android:text="로그인"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnFind"
         android:layout_width="150dp"
         android:layout_height="20dp"
         android:layout_marginStart="130dp"
@@ -56,11 +56,11 @@
         android:text="아이디/비밀번호 찾기"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btnNaver"
         android:layout_width="353dp"
         android:layout_height="51dp"
         android:layout_marginStart="30dp"
@@ -73,10 +73,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintTop_toBottomOf="@+id/btnFind" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btnFacebook"
         android:layout_width="353dp"
         android:layout_height="51dp"
         android:layout_marginStart="29dp"
@@ -89,10 +89,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+        app:layout_constraintTop_toBottomOf="@+id/btnNaver" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvWantReg"
         android:layout_width="210dp"
         android:layout_height="20dp"
         android:layout_marginStart="68dp"
@@ -101,10 +101,10 @@
         android:text="혹시, 아직 회원가입을 안하셨나요?"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/btnFacebook" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btnReg"
         android:layout_width="60dp"
         android:layout_height="20dp"
         android:layout_marginTop="24dp"
@@ -112,8 +112,8 @@
         android:text="회원가입"
         android:textColor="#045504"
         android:textSize="13dp"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintStart_toEndOf="@+id/tvWantReg"
+        app:layout_constraintTop_toBottomOf="@+id/btnFacebook" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
