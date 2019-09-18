@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".FragmentUser">
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -56,7 +57,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/notice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -65,7 +66,7 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/history"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
@@ -73,7 +74,7 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/my"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
@@ -81,7 +82,7 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/button11"
+                android:id="@+id/version"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
