@@ -19,6 +19,7 @@ public class loginAct extends AppCompatActivity {
         EditText etPassword = (EditText) findViewById(R.id.etPassword);
         Button btnReg= (Button) findViewById(R.id.btnReg);
         Button btn_go = (Button) findViewById(R.id.btnLogin);
+        Button btnFind = (Button) findViewById(R.id.btnFind) ;
 
         btn_go.setOnClickListener(
                 new Button.OnClickListener(){
@@ -35,6 +36,14 @@ public class loginAct extends AppCompatActivity {
             public void onClick(View view) {
                 Intent registerintent = new Intent(loginAct.this, RegActivity.class);
                 loginAct.this.startActivity(registerintent);
+            }
+        });
+
+        btnFind.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent findintent = new Intent(loginAct.this, FindMyInfo.class);
+                loginAct.this.startActivity(findintent);
             }
         });
 

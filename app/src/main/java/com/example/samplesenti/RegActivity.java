@@ -18,12 +18,13 @@ public class RegActivity extends AppCompatActivity {
         EditText etId  = (EditText) findViewById(R.id.etId);
         EditText etPassword = (EditText) findViewById(R.id.etPassword);
         EditText etName = (EditText) findViewById(R.id.etName);
+        EditText etPhone = (EditText) findViewById(R.id.etPhone);
         Button btnReg= (Button) findViewById(R.id.btnReg);
 
         btnReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent registerintent = new Intent(RegActivity.this,MainMenuAct.class);
+                Intent registerintent = new Intent(RegActivity.this,loginAct.class);
                 RegActivity.this.startActivity(registerintent);
             }
         });
