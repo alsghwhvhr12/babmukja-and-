@@ -35,7 +35,7 @@
         android:layout_marginTop="83dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="ID"
+        android:hint="ID(Email)"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/etPassword"
         app:layout_constraintStart_toStartOf="@+id/etPassword"
