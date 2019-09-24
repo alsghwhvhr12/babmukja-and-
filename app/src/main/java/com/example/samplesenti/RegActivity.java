@@ -1,17 +1,18 @@
 package com.example.samplesenti;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.example.samplesenti.view.loginAct;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -49,7 +50,7 @@ public class RegActivity extends AppCompatActivity {
                           builder.setPositiveButton("확인",null);
                           builder.create()
                                   .show();
-                          Intent intent = new Intent(RegActivity.this,loginAct.class);
+                          Intent intent = new Intent(RegActivity.this, loginAct.class);
                           RegActivity.this.startActivity(intent);
                           }
                           else

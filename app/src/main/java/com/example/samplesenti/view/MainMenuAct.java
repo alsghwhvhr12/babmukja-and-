@@ -1,22 +1,16 @@
-package com.example.samplesenti;
+package com.example.samplesenti.view;
 
-import android.app.ActionBar;
 import android.os.Bundle;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.annotation.NonNull;
-
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toolbar;
 
-import androidx.fragment.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.samplesenti.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainMenuAct extends AppCompatActivity {
 

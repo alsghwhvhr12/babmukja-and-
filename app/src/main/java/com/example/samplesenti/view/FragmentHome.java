@@ -1,4 +1,4 @@
-package com.example.samplesenti;
+package com.example.samplesenti.view;
 
 import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
+
+import com.example.samplesenti.R;
 
 
 public class FragmentHome extends Fragment {

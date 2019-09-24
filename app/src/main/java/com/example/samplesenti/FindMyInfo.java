@@ -2,16 +2,16 @@ package com.example.samplesenti;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
+import com.example.samplesenti.view.loginAct;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 public class FindMyInfo extends AppCompatActivity {
 
@@ -44,7 +44,7 @@ public class FindMyInfo extends AppCompatActivity {
         btnFindId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent findIdintent = new Intent(FindMyInfo.this,loginAct.class);
+                Intent findIdintent = new Intent(FindMyInfo.this, loginAct.class);
                 FindMyInfo.this.startActivity(findIdintent);
             }
         });
