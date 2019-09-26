@@ -1,4 +1,4 @@
-package com.example.samplesenti;
+package com.example.samplesenti.view;
 
 import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
@@ -9,15 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
+
+import com.example.samplesenti.R;
+import com.example.samplesenti.view.MainMenuAct;
 
 
-public class FragmentVersion extends Fragment {
+public class FragmentNotice extends Fragment {
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_version, container, false);
+        View view = inflater.inflate(R.layout.fragment_notice, container, false);
 
-        Button btn_go = (Button) view.findViewById(R.id.goBack3);
+        Button btn_go = (Button) view.findViewById(R.id.goBack);
         btn_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -25,7 +27,6 @@ public class FragmentVersion extends Fragment {
                 act.goBack(view);
             }
         });
-
         return view;
     }
 

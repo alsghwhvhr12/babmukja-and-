@@ -1,22 +1,23 @@
-package com.example.samplesenti;
-
-import androidx.fragment.app.Fragment;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+package com.example.samplesenti.view;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.LayoutInflater;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
-public class FragmentNotice extends Fragment {
+import com.example.samplesenti.R;
 
+
+public class FragmentMy extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_notice, container, false);
+        View view = inflater.inflate(R.layout.fragment_my, container, false);
 
-        Button btn_go = (Button) view.findViewById(R.id.goBack);
+        Button btn_go = (Button) view.findViewById(R.id.goBack2);
         btn_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -24,6 +25,7 @@ public class FragmentNotice extends Fragment {
                 act.goBack(view);
             }
         });
+
         return view;
     }
 

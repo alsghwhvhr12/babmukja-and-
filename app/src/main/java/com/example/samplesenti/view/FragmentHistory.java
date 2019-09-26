@@ -1,4 +1,4 @@
-package com.example.samplesenti;
+package com.example.samplesenti.view;
 
 import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
@@ -9,8 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
+
+import com.example.samplesenti.R;
+import com.example.samplesenti.view.MainMenuAct;
 
 
 public class FragmentHistory extends Fragment {
