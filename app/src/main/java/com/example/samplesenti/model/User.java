@@ -3,7 +3,7 @@ package com.example.samplesenti.model;
 public class User implements IUser {
 
     private int no;
-    private String id, pw, name;
+    private String id, pw, name,tel;
     private byte kind;
 
     public void setNo(int no) {
@@ -20,6 +20,10 @@ public class User implements IUser {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
     public void setKind(byte kind) {
@@ -44,6 +48,11 @@ public class User implements IUser {
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String getTel() {
+        return tel;
     }
 
     @Override

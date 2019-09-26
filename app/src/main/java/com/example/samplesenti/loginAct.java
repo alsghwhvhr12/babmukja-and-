@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.samplesenti.view.MainActivity;
+import com.example.samplesenti.view.RegActivity;
+
 public class loginAct extends AppCompatActivity {
 
     @Override
@@ -25,7 +28,7 @@ public class loginAct extends AppCompatActivity {
                 new Button.OnClickListener(){
                     public void onClick(View v) {
                         //로그인화면
-                        Intent intent = new Intent(getApplicationContext(), MainMenuAct.class);
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         //액티비티 시작
                         startActivity(intent);
                     }

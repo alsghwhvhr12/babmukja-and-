@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.samplesenti">
+    package="com.example.samplesenti"
+    >
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -13,13 +16,12 @@
             android:name=".FindMyInfo"
             android:label="@string/title_activity_find_my_info"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".RegActivity" />
-        <activity android:name=".MainActivity2" />
+        <activity android:name=".view.RegActivity" />
         <activity
-            android:name=".MainMenuAct"
+            android:name=".view.MainMenuAct"
             android:label="@string/title_activity_main_menu" />
-        <activity android:name=".loginAct" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.loginAct" />
+        <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

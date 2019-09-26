@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.samplesenti.FindMyInfo;
 import com.example.samplesenti.R;
-import com.example.samplesenti.RegActivity;
 import com.example.samplesenti.presenter.ILoginActPresenter;
 import com.example.samplesenti.presenter.LoginActPresenter;
 
