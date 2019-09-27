@@ -1,5 +1,6 @@
 package com.example.samplesenti.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,8 +23,8 @@ public class FragmentUser extends Fragment {
         btn_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainMenuAct act = (MainMenuAct) getActivity();
-                act.replaceF(view);
+                Intent intent = new Intent(getActivity(), NoticeActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -31,8 +32,8 @@ public class FragmentUser extends Fragment {
         btn_go2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainMenuAct act = (MainMenuAct) getActivity();
-                act.replaceF(view);
+                Intent intent = new Intent(getActivity(), HistoryActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -40,8 +41,8 @@ public class FragmentUser extends Fragment {
         btn_go3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainMenuAct act = (MainMenuAct) getActivity();
-                act.replaceF(view);
+                Intent intent = new Intent(getActivity(), MylecActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -49,8 +50,8 @@ public class FragmentUser extends Fragment {
         btn_go4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainMenuAct act = (MainMenuAct) getActivity();
-                act.replaceF(view);
+                Intent intent = new Intent(getActivity(), VersionActivity.class);
+                startActivity(intent);
             }
         });
 

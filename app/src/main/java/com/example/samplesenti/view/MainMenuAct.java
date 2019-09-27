@@ -2,7 +2,6 @@ package com.example.samplesenti.view;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,10 +17,6 @@ public class MainMenuAct extends AppCompatActivity {
     private FragmentHome fragmentHome = new FragmentHome();
     private FragmentDashboard fragmentDashboard = new FragmentDashboard();
     private FragmentUser fragmentUser = new FragmentUser();
-    private FragmentNotice fragmentNotice = new FragmentNotice();
-    private FragmentHistory fragmentHistory = new FragmentHistory();
-    private FragmentMy fragmentMy = new FragmentMy();
-    private FragmentVersion fragmentVersion = new FragmentVersion();
 
 
 
@@ -37,45 +32,6 @@ public class MainMenuAct extends AppCompatActivity {
         navView.setOnNavigationItemSelectedListener(new ItemSelectedListener());
     }
 
-    public void replaceF(View view){
-        FragmentTransaction transaction2 = fragmentManager.beginTransaction();
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        navView.setVisibility(view.GONE);
-        switch(view.getId()){
-            case R.id.notice:
-                transaction2.replace(R.id.frameLayout2, fragmentNotice).commitAllowingStateLoss();
-                break;
-            case R.id.history:
-                transaction2.replace(R.id.frameLayout2, fragmentHistory).commitAllowingStateLoss();
-                break;
-            case R.id.my:
-                transaction2.replace(R.id.frameLayout2, fragmentMy).commitAllowingStateLoss();
-                break;
-            case R.id.version:
-                transaction2.replace(R.id.frameLayout2, fragmentVersion).commitAllowingStateLoss();
-                break;
-        }
-    }
-
-    public void goBack(View view) {
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        navView.setVisibility(view.VISIBLE);
-        switch (view.getId()){
-            case R.id.goBack: //toolbar의 back키 눌렀을 때 동작
-                transaction.remove(fragmentNotice).commitAllowingStateLoss();
-                break;
-            case R.id.goBack1: //toolbar의 back키 눌렀을 때 동작
-                transaction.remove(fragmentHistory).commitAllowingStateLoss();
-                break;
-            case R.id.goBack2: //toolbar의 back키 눌렀을 때 동작
-                transaction.remove(fragmentMy).commitAllowingStateLoss();
-                break;
-            case R.id.goBack3: //toolbar의 back키 눌렀을 때 동작
-                transaction.remove(fragmentVersion).commitAllowingStateLoss();
-                break;
-        }
-    }
 
 
     class ItemSelectedListener implements BottomNavigationView.OnNavigationItemSelectedListener{

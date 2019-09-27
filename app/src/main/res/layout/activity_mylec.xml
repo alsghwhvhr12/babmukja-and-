@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".view.MylecActivity">
 
     <ScrollView
         android:id="@+id/scrollView6"
@@ -13,7 +14,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar4">
+        app:layout_constraintTop_toBottomOf="@+id/mylectb">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -125,7 +126,7 @@
     </ScrollView>
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar4"
+        android:id="@+id/mylectb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#000000"
@@ -137,17 +138,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <Button
-        android:id="@+id/goBack2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="#00FFFFFF"
-        android:text="뒤로가기"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView4"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
