@@ -16,7 +16,7 @@
             android:name=".FindMyInfo"
             android:label="@string/title_activity_find_my_info"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".view.RegActivity" />
+        <activity android:name=".RegActivity" />
         <activity
             android:name=".view.MainMenuAct"
             android:label="@string/title_activity_main_menu" />
