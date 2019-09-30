@@ -16,7 +16,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.example.samplesenti.R;
-import com.example.samplesenti.model.Company;
 import com.example.samplesenti.model.Login_M;
 import com.example.samplesenti.model.ServerURL;
 import com.example.samplesenti.presenter.LoginPresenter;
