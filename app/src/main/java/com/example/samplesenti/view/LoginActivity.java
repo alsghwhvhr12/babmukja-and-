@@ -1,6 +1,9 @@
-package com.example.samplesenti.view;
+//
+//  Created by 이민호, 전재준, 배진우 on 18/09/2019.
+//  Copyright © 2019 이민호. All rights reserved.
+//
 
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.samplesenti.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;

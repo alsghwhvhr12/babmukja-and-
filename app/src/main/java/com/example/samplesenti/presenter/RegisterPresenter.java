@@ -1,13 +1,17 @@
+//
+//  Created by 이민호, 전재준, 배진우 on 18/09/2019.
+//  Copyright © 2019 이민호. All rights reserved.
+//
+
 package com.example.samplesenti.presenter;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
-import com.example.samplesenti.model.User;
-import com.example.samplesenti.view.RegisterInterface;
 import com.example.samplesenti.model.Login;
 import com.example.samplesenti.view.MainActivity;
+import com.example.samplesenti.view.RegisterInterface;
 
 public class RegisterPresenter implements RegisterInterface.Presenter {
 
