@@ -10,14 +10,14 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="220dp"
-        android:background="@drawable/login_background">
+        android:background="@drawable/register_background">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="Login"
+            android:text="Register"
             android:textSize="32dp"
             android:textStyle="bold" />
     </RelativeLayout>
@@ -27,13 +27,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/header">
-
-        <TextView
-            android:id="@+id/guide_vert"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
 
         <TextView
             android:id="@+id/guide_center"
@@ -49,10 +42,10 @@
             android:layout_alignRight="@+id/guide_center"
             android:layout_marginRight="23dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/button_border_active"
+            android:background="@drawable/button_border"
             android:text="Login"
             android:textAllCaps="false"
-            android:textColor="#ffffff" />
+            android:textColor="#000000" />
 
         <Button
             android:id="@+id/registerBtn"
@@ -61,16 +54,16 @@
             android:layout_alignLeft="@+id/guide_center"
             android:layout_marginLeft="23dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/button_border"
+            android:background="@drawable/button_border_active"
             android:text="Register"
             android:textAllCaps="false"
-            android:textColor="#000000" />
+            android:textColor="#ffffff" />
 
         <EditText
             android:id="@+id/idEdit"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_above="@+id/guide_vert"
+            android:layout_above="@+id/passwordEdit"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
@@ -86,10 +79,11 @@
             android:id="@+id/passwordEdit"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_below="@+id/guide_vert"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="3dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="3dp"
             android:background="@drawable/edit_border"
             android:gravity="center"
             android:hint="Password"
@@ -98,29 +92,35 @@
             android:textColorHint="#6e6e6e"
             android:textSize="15dp" />
 
-
-        <TextView
-            android:id="@+id/googleLogin"
+        <EditText
+            android:id="@+id/passwordCheckEdit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/login"
-            android:gravity="right"
-            android:paddingRight="54dp"
-            android:text="Google Login"
-            android:textColor="#0c0c0c"
-            android:textSize="13dp" />
+            android:layout_height="40dp"
+            android:layout_below="@+id/passwordEdit"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_border"
+            android:gravity="center"
+            android:hint="Password Check"
+            android:inputType="textPassword"
+            android:textColor="#000000"
+            android:textColorHint="#6e6e6e"
+            android:textSize="15dp" />
 
 
         <Button
-            android:id="@+id/login"
+            android:id="@+id/regist"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="18dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:text="Login"
+            android:background="@drawable/button_border_active"
+            android:text="Sign Up"
             android:textAllCaps="false" />
+
 
     </RelativeLayout>
 
