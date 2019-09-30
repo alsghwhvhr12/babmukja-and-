@@ -1,6 +1,9 @@
-package com.example.samplesenti.model;
+//
+//  Created by 이민호, 전재준, 배진우 on 18/09/2019.
+//  Copyright © 2019 이민호. All rights reserved.
+//
 
-import android.nfc.Tag;
+package com.example.samplesenti.model;
 
 public class ServerURL {
     // ServerURL 적는 클라스. public static final String 이용!

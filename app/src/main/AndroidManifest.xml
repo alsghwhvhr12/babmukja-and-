@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.samplesenti">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,8 +33,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.MapActivity" />
+        <activity android:name=".view.HistoryActivity" />
+        <activity android:name=".view.MylecActivity" />
+        <activity android:name=".view.VersionActivity" />
+        <activity android:name=".view.NoticeActivity" />
+
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="6a568fe135c3b4bb984443f97227eda9"/>
     </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
