@@ -5,5 +5,6 @@ public interface IUser {
     String getId();
     String getPw();
     String getName();
+    String getTel();
     byte getKind();
 }

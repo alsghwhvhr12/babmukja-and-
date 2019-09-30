@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 new Button.OnClickListener(){
                     public void onClick(View v) {
                     //로그인화면
-                    Intent intent = new Intent(getApplicationContext(), loginAct.class);
+                    Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
                     //액티비티 시작
                     startActivity(intent);
                     }

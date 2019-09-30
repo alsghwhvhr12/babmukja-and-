@@ -9,7 +9,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.samplesenti.view.loginAct;
+import com.example.samplesenti.view.LoginActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -44,7 +44,7 @@ public class FindMyInfo extends AppCompatActivity {
         btnFindId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent findIdintent = new Intent(FindMyInfo.this, loginAct.class);
+                Intent findIdintent = new Intent(FindMyInfo.this, LoginActivity.class);
                 FindMyInfo.this.startActivity(findIdintent);
             }
         });
@@ -52,7 +52,7 @@ public class FindMyInfo extends AppCompatActivity {
         btnFindId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent findPassintent = new Intent(FindMyInfo.this,loginAct.class);
+                Intent findPassintent = new Intent(FindMyInfo.this,LoginActivity.class);
                 FindMyInfo.this.startActivity(findPassintent);
             }
         });

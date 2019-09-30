@@ -2,18 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.samplesenti">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-
-
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,20 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.MylecActivity"></activity>
-        <activity android:name=".view.VersionActivity" />
-        <activity android:name=".view.HistoryActivity" />
-        <activity android:name=".view.NoticeActivity" />
-        <activity android:name=".view.MapActivity" />
+        <activity android:name=".view.submain"></activity>
+        <activity android:name=".view.RegisterActivity" />
+        <activity android:name=".view.LoginActivity" />
         <activity
             android:name=".FindMyInfo"
             android:label="@string/title_activity_find_my_info"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".RegActivity" />
+        <activity android:name="view.RegisterActivity" />
         <activity
             android:name=".view.MainMenuAct"
             android:label="@string/title_activity_main_menu" />
-        <activity android:name=".view.loginAct" />
         <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,13 +28,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <uses-library
-            android:name="org.apache.http.legacy"
-            android:required="false" />
-        <meta-data
-            android:name="com.kakao.sdk.AppKey"
-            android:value="6a568fe135c3b4bb984443f97227eda9" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
