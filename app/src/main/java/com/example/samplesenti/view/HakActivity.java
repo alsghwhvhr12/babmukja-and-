@@ -17,12 +17,13 @@ import android.widget.ListView; import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+import java.util.zip.Inflater;
 
 
 public class HakActivity extends AppCompatActivity {
 
     private ListView lvHak;
+    private Inflater inflater;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +40,8 @@ public class HakActivity extends AppCompatActivity {
 
     }
 
-/*
-    private class HakListViewAdapter extends Adapter {
+
+    private class HakListViewAdapter extends BaseAdapter {
         private List hakList;
 
         private Context context;
@@ -54,7 +55,38 @@ public class HakActivity extends AppCompatActivity {
         public int getCount() {
             return hakList.size();
         }
+
+        @Override
+        public Object getItem(int position) {
+            return hakList.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            /* 가장 간단한 방법 * 사용자가 처음으로 Flicking을 할 때, 아래쪽에 만들어지는 Cell(한 칸)은 Null이다. */
+            if (convertView == null) {
+                // Item Cell에 Layout을 적용시킬 Inflater 객체를 생성한다.
+                LayoutInflater inflater = (LayoutInflater) context.getSystemService(LAYOUT_INFLATER_SERVICE);
+                // Item Cell에 Layout을 적용시킨다.
+                // 실제 객체는 이곳에 있다.
+                convertView = inflater.inflate(R.layout.hak_item, parent, false);
+            }
+            TextView tvhakItem1 = (TextView) convertView.findViewById(R.id.tvhakItem1);
+            TextView tvhakItem2 = (TextView) convertView.findViewById(R.id.tvhakItem2);
+            HakVO article = (HakVO) getItem(position);
+            tvhakItem1.setText(article.getProductName());
+            tvhakItem2.setText(article.getProductPrice());
+          
+            return convertView;
+        }
+
+
     }
-    */
 
 }
+
