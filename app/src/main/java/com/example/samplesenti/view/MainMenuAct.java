@@ -7,6 +7,7 @@ package com.example.samplesenti.view;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,11 +19,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainMenuAct extends AppCompatActivity {
 
-    private FragmentManager fragmentManager = getSupportFragmentManager();
+    private FragmentManager fragmentManager = getSupportFragmentManager(); //프레그먼트 선언
     private FragmentHome fragmentHome = new FragmentHome();
     private FragmentDashboard fragmentDashboard = new FragmentDashboard();
     private FragmentUser fragmentUser = new FragmentUser();
-
 
 
     @Override
