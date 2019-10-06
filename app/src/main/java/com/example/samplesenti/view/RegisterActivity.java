@@ -89,7 +89,10 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
                 break;
 
             case R.id.regist:
-                if(validate=true&&idEdit.length()>5&&idName.length()>2&&passwordEdit.getText().toString().equals(passwordCheckEdit.getText().toString()))
+                if(validate=true
+                        &&idEdit.length()>5
+                        &&idName.length()>2
+                        &&passwordEdit.getText().toString().equals(passwordCheckEdit.getText().toString()))
                 {
                     Response.Listener<String> responseListener = new Response.Listener<String>(){
                         public  void onResponse(String response){
@@ -121,7 +124,8 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
                         try{
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
-                            if(success&&idEdit.length()>5){
+                            if(success
+                                    &&idEdit.length()>5){
                                 AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                                 dialog = builder.setMessage("사용 가능한 아이디 입니다.")
                                         .setPositiveButton("OK",null)

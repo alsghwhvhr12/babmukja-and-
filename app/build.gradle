@@ -46,4 +46,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation files('libs\\libDaumMapAndroid.jar')
     implementation files('libs\\libDaumMapEngineApi.jar')
+    // 카카오톡 SDK 추가
+
+    implementation group: project.KAKAO_SDK_GROUP, name: 'usermgmt',
+            version: project.KAKAO_SDK_VERSION
 }

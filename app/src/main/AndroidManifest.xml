@@ -3,6 +3,7 @@
     package="com.example.samplesenti">
 
     <application
+        android:name=".presenter.KakaoPresenter"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -37,10 +38,11 @@
         <activity android:name=".view.MylecActivity" />
         <activity android:name=".view.VersionActivity" />
         <activity android:name=".view.NoticeActivity" />
+        <!-- 카카오톡 메타데이터 -->
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"
-            android:value="6a568fe135c3b4bb984443f97227eda9" />
+            android:value="@string/kakao_app_key" />
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />

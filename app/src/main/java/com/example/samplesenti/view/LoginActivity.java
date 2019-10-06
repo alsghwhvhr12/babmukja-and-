@@ -19,6 +19,9 @@ import com.example.samplesenti.R;
 import com.example.samplesenti.model.Login_M;
 import com.example.samplesenti.model.ServerURL;
 import com.example.samplesenti.presenter.LoginPresenter;
+import com.example.samplesenti.presenter.SessionCallback;
+import com.kakao.auth.AuthType;
+import com.kakao.auth.Session;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,7 +33,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     private Button loginBtn;
     private Button registerBtn;
     private RadioGroup radioGroup;
-
+    private Button kakaoBtn;
 
     private EditText idEdit;
     private EditText passwordEdit;
@@ -49,6 +52,8 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
 
     @Override
     public void setView() {
+        kakaoBtn=(Button)findViewById(R.id.btn_custom_login) ;
+        kakaoBtn.setOnClickListener(this);
         loginBtn = (Button)findViewById(R.id.loginBtn);
         registerBtn = (Button)findViewById(R.id.registerBtn);
         idEdit = (EditText)findViewById(R.id.idEdit);
@@ -56,7 +61,6 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
         login = (Button)findViewById(R.id.login);
         googleLogin = (TextView)findViewById(R.id.googleLogin);
         radioGroup = (RadioGroup)findViewById(R.id.radioGroup);
-
         loginBtn.setOnClickListener(this);
         registerBtn.setOnClickListener(this);
         login.setOnClickListener(this);
@@ -67,6 +71,12 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.btn_custom_login:
+                Session session = Session.getCurrentSession();
+                session.addCallback(new SessionCallback());
+                session.open(AuthType.KAKAO_LOGIN_ALL,LoginActivity.this);
+                break;
+
             case R.id.loginBtn:
                 break;
             case R.id.registerBtn:

@@ -9,4 +9,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_find_my_info">FindMyInfo</string>
     <string name="title_activity_login">LoginActivity</string>
+
+
+        <string name="kakao_app_key">c92371a02b213c5e27fa4cb3c61c849d</string>
+
 </resources>
