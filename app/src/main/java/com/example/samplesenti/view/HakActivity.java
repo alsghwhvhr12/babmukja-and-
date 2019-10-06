@@ -3,20 +3,21 @@ package com.example.samplesenti.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.samplesenti.R;
+import com.example.samplesenti.model.HakVO;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ListView; import android.widget.TextView;
+import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.zip.Inflater;
 
 
@@ -28,16 +29,26 @@ public class HakActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hak);
+        final List hakList = new ArrayList();
 
+        setContentView(R.layout.activity_hak);
         lvHak = (ListView) findViewById(R.id.lvHak);
 
-        List hakList = new ArrayList();
-
-        for (int count = 1; count < 300; count++) {
-            hakList.add(new HakVO("학식이름"+count, "업체명"));
+        for (int count = 1; count < 15; count++) {
+            hakList.add(new HakVO("메뉴"+count, "가격"+count));
         }
-        lvHak.setAdapter(new HakListViewAdapter(hakList,this));
+       lvHak.setAdapter(new HakListViewAdapter(hakList,this));//  학식 리스트를 뿌려줌
+
+        //학식메뉴를 눌렀을때 넘어가는 창
+        lvHak.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView parent,View view,int position,long id){
+                HakVO article = (HakVO) hakList.get(position);
+                Intent intent = new Intent(view.getContext(),HakDetailActivity.class);
+                intent.putExtra("article",article); //putExtra로 데이터를 넘겨줌
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -56,7 +67,6 @@ public class HakActivity extends AppCompatActivity {
             this.hakList = hakList;
             this.context = context;
         }
-
         /* ListView에 세팅할 아이템의 갯수 * @return */
         @Override
         public int getCount() {
@@ -78,6 +88,7 @@ public class HakActivity extends AppCompatActivity {
         /* 아이템의 index를 가져옴 * Item index == position * @param position * @return */
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
+
             /* 가장 간단한 방법 * 사용자가 처음으로 Flicking을 할 때, 아래쪽에 만들어지는 Cell(한 칸)은 Null이다. */
             if (convertView == null) {
                 // Item Cell에 Layout을 적용시킬 Inflater 객체를 생성한다.
@@ -94,9 +105,8 @@ public class HakActivity extends AppCompatActivity {
           
             return convertView;
         }
-
-
     }
+
 
 }
 

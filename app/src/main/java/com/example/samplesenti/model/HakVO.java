@@ -1,6 +1,8 @@
-package com.example.samplesenti.view;
+package com.example.samplesenti.model;
 
-public class HakVO {
+import java.io.Serializable;
+
+public class HakVO implements Serializable {
     private String productName;
     private String productPrice;
 
@@ -17,6 +19,8 @@ public class HakVO {
     public String getProductPrice(){
         return productPrice;
     }
+
+
 
     //////////////////Set/////////////
     public String setProductName(String productName) {
