@@ -26,26 +26,33 @@ public class FragmentHome extends Fragment  {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home,container,false);
-        ImageButton hak = (ImageButton) view.findViewById(R.id.imageButton3);
-        ImageButton pig = (ImageButton) view.findViewById(R.id.imageButton2);
-        ImageButton min = (ImageButton)view.findViewById(R.id.imageButton);
+        final ImageButton hak = (ImageButton) view.findViewById(R.id.imageButton3);
+        final ImageButton pig = (ImageButton) view.findViewById(R.id.imageButton2);
+        final   ImageButton min = (ImageButton)view.findViewById(R.id.imageButton);
+        final Button map = (Button)view.findViewById(R.id.map);
 
         hak.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.imageButton3:
-                        Intent intent1 = new Intent(getActivity(), HakActivity.class);
-                        startActivity(intent1);
-
+                        Intent intent = new Intent(getActivity(), HakActivity.class);
+                        startActivity(intent);
+/*
                     case R.id.imageButton2:
-                        Intent intent2 = new Intent(getActivity(), HakActivity.class);
+                        Intent intent2 = new Intent(getActivity(), MainMenuAct.class);
                         startActivity(intent2);
 
                     case R.id.imageButton:
-                        Intent intent3 = new Intent(getActivity(), HakActivity.class);
+                        Intent intent3 = new Intent(getActivity(), MainMenuAct.class);
                         startActivity(intent3);
+                        */
                 }
+
+        });
+        map.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(getActivity(),MapActivity.class);
+                startActivity(intent);
             }
         });
         return view;
