@@ -7,6 +7,7 @@ package com.example.samplesenti.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ import com.example.samplesenti.R;
 public class FragmentHome extends Fragment  {
 
 
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home,container,false);
         ImageButton hak = (ImageButton) view.findViewById(R.id.imageButton3);
@@ -30,19 +32,22 @@ public class FragmentHome extends Fragment  {
 
         hak.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v){
-                switch (v.getId())
-                {
+            public void onClick(View v) {
+                switch (v.getId()) {
                     case R.id.imageButton3:
+                        Intent intent1 = new Intent(getActivity(), HakActivity.class);
+                        startActivity(intent1);
 
+                    case R.id.imageButton2:
+                        Intent intent2 = new Intent(getActivity(), HakActivity.class);
+                        startActivity(intent2);
+
+                    case R.id.imageButton:
+                        Intent intent3 = new Intent(getActivity(), HakActivity.class);
+                        startActivity(intent3);
                 }
             }
-
         });
-
         return view;
-
     }
-
-
 }

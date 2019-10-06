@@ -35,37 +35,47 @@ public class HakActivity extends AppCompatActivity {
         List hakList = new ArrayList();
 
         for (int count = 1; count < 300; count++) {
-            hakList.add(new HakVO("학식이름", "업체명"));
+            hakList.add(new HakVO("학식이름"+count, "업체명"));
         }
-
+        lvHak.setAdapter(new HakListViewAdapter(hakList,this));
     }
 
 
+
+
     private class HakListViewAdapter extends BaseAdapter {
+
+        /* ListView에 세팅할 Item 정보들 */
         private List hakList;
 
+        /*ListView에 Item을 세팅할 요청자의 정보가 들어감*/
         private Context context;
 
+        /** * 생성자 * * @param articleList * @param context */
         public HakListViewAdapter(List hakList, Context context) {
             this.hakList = hakList;
             this.context = context;
         }
 
+        /* ListView에 세팅할 아이템의 갯수 * @return */
         @Override
         public int getCount() {
             return hakList.size();
         }
 
+        /* position 번째 Item 정보를 가져옴 * @param position * @return */
         @Override
         public Object getItem(int position) {
             return hakList.get(position);
         }
 
+        /* position 번째 Item 정보를 가져옴 * @param position * @return */
         @Override
         public long getItemId(int position) {
             return position;
         }
 
+        /* 아이템의 index를 가져옴 * Item index == position * @param position * @return */
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             /* 가장 간단한 방법 * 사용자가 처음으로 Flicking을 할 때, 아래쪽에 만들어지는 Cell(한 칸)은 Null이다. */
