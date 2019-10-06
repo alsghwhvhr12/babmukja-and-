@@ -5,9 +5,12 @@
 
 package com.example.samplesenti.view;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,6 +38,11 @@ public class MainMenuAct extends AppCompatActivity {
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(new ItemSelectedListener());
+        //이름or 아이디값을 받아옴
+        Intent intent = getIntent();
+        String Id=intent.getStringExtra(("id"));
+        TextView tvId= (TextView) findViewById(R.id.tvName);
+        tvId.setText(Id);
     }
 
 

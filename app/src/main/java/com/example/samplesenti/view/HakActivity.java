@@ -43,9 +43,9 @@ public class HakActivity extends AppCompatActivity {
         lvHak.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView parent,View view,int position,long id){
-                HakVO article = (HakVO) hakList.get(position);
+                HakVO menu = (HakVO) hakList.get(position);
                 Intent intent = new Intent(view.getContext(),HakDetailActivity.class);
-                intent.putExtra("article",article); //putExtra로 데이터를 넘겨줌
+                intent.putExtra("menu",menu); //putExtra로 데이터를 넘겨줌
                 startActivity(intent);
             }
         });
@@ -99,9 +99,9 @@ public class HakActivity extends AppCompatActivity {
             }
             TextView tvhakItem1 = (TextView) convertView.findViewById(R.id.tvhakItem1);
             TextView tvhakItem2 = (TextView) convertView.findViewById(R.id.tvhakItem2);
-            HakVO article = (HakVO) getItem(position);
-            tvhakItem1.setText(article.getProductName());
-            tvhakItem2.setText(article.getProductPrice());
+            HakVO hak = (HakVO) getItem(position);
+            tvhakItem1.setText(hak.getProductName());
+            tvhakItem2.setText(hak.getProductPrice());
           
             return convertView;
         }

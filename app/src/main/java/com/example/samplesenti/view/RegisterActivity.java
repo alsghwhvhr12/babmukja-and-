@@ -55,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
         registerBtn.setOnClickListener(this);
         regist.setOnClickListener(this);
         //텍스트
-        idEdit=(EditText)findViewById(R.id.idEdit);
+        idEdit=(EditText)findViewById(R.id.idName);
         passwordEdit=(EditText)findViewById(R.id.passwordEdit);
         passwordCheckEdit=(EditText)findViewById(R.id.passwordCheckEdit);
 

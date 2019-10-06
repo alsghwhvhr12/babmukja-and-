@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     public void setView() {
         loginBtn = (Button)findViewById(R.id.loginBtn);
         registerBtn = (Button)findViewById(R.id.registerBtn);
-        idEdit = (EditText)findViewById(R.id.idEdit);
+        idEdit = (EditText)findViewById(R.id.idName);
         passwordEdit = (EditText)findViewById(R.id.passwordEdit);
         login = (Button)findViewById(R.id.login);
         googleLogin = (TextView)findViewById(R.id.googleLogin);
@@ -77,8 +77,10 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
             case R.id.login:
                 String id = idEdit.getText().toString();
                 String pw = passwordEdit.getText().toString();
-
-
+                //아이디값 or 이름값 넘겨줄것
+                Intent i = new Intent(LoginActivity.this,MainMenuAct.class);
+                i.putExtra("id",id);
+                //i.putExtra("name",name);
                 Response.Listener<String> responseListener = new Response.Listener<String>(){
                     public  void onResponse(String response){
                         try {
