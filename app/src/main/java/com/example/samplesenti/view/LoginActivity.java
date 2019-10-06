@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     public void setView() {
         loginBtn = (Button)findViewById(R.id.loginBtn);
         registerBtn = (Button)findViewById(R.id.registerBtn);
-        idEdit = (EditText)findViewById(R.id.idName);
+        idEdit = (EditText)findViewById(R.id.idEdit);
         passwordEdit = (EditText)findViewById(R.id.passwordEdit);
         login = (Button)findViewById(R.id.login);
         googleLogin = (TextView)findViewById(R.id.googleLogin);

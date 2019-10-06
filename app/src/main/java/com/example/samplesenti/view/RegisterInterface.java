@@ -11,6 +11,6 @@ public interface RegisterInterface {
     }
     interface Presenter{
         void presenterView();
-        void SignUp(String id, String pw);
+        void SignUp(String id, String pw,String name);
     }
 }

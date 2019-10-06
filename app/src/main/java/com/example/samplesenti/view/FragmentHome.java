@@ -36,18 +36,9 @@ public class FragmentHome extends Fragment  {
             public void onClick(View v) {
                         Intent intent = new Intent(getActivity(), HakActivity.class);
                         startActivity(intent);
-/*
-                    case R.id.imageButton2:
-                        Intent intent2 = new Intent(getActivity(), MainMenuAct.class);
-                        startActivity(intent2);
-
-                    case R.id.imageButton:
-                        Intent intent3 = new Intent(getActivity(), MainMenuAct.class);
-                        startActivity(intent3);
-                        */
                 }
-
         });
+
         map.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){

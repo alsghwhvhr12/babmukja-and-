@@ -35,7 +35,7 @@ public class RegisterPresenter implements RegisterInterface.Presenter {
     }
 
     @Override
-    public void SignUp(String id, String pw) {
+    public void SignUp(String id, String pw,String name) {
         boolean checkSignUp = login.SignUp(id,pw);
 
         if(checkSignUp){
