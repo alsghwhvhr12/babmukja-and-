@@ -121,7 +121,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
                         try{
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
-                            if(success){
+                            if(success&&idEdit.length()>5){
                                 AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                                 dialog = builder.setMessage("사용 가능한 아이디 입니다.")
                                         .setPositiveButton("OK",null)
@@ -129,10 +129,11 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
                                 dialog.show();
                                 idEdit.setEnabled(false);
                                 validate=true;
-
+                                idEdit.setBackgroundColor(getResources().getColor(R.color.colorGray));
+                                valid.setBackgroundColor(getResources().getColor(R.color.colorGray));
                             }else{
                                 AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-                                dialog=builder.setMessage("이미 사용중 입니다.")
+                                dialog=builder.setMessage("이미 사용중 이거나 짧습니다.")
                                         .setNegativeButton("OK",null)
                                         .create();
                                 dialog.show();;
@@ -147,8 +148,6 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
                 queue.add(valid);
                 break;
         }
-
-
     }
 
 
