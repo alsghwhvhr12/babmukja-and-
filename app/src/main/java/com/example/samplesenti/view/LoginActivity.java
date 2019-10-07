@@ -1,5 +1,6 @@
 package com.example.samplesenti.view;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +23,7 @@ import com.example.samplesenti.presenter.LoginPresenter;
 import com.example.samplesenti.presenter.SessionCallback;
 import com.kakao.auth.AuthType;
 import com.kakao.auth.Session;
+import com.kakao.usermgmt.LoginButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,6 +31,10 @@ import org.json.JSONObject;
 public class LoginActivity extends AppCompatActivity implements LoginInterface.View, View.OnClickListener{
 
     private LoginInterface.Presenter presenter;
+
+    private Context mContext;
+    private Button btn_custom_login;
+    private LoginButton btn_kakao_login;
 
     private Button loginBtn;
     private Button registerBtn;
@@ -45,10 +51,23 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        mContext = getApplicationContext();
+
 
         presenter = new LoginPresenter(LoginActivity.this,getApplicationContext(),this);
         presenter.presenterView();
+
+        btn_custom_login = (Button) findViewById(R.id.btn_custom_login);
+        btn_custom_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_kakao_login.performClick();
+            }
+        });
+        btn_kakao_login = (LoginButton) findViewById(R.id.btn_kakao_login);
     }
+
+
 
     @Override
     public void setView() {
@@ -71,11 +90,12 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btn_custom_login:
-                Session session = Session.getCurrentSession();
-                session.addCallback(new SessionCallback());
-                session.open(AuthType.KAKAO_LOGIN_ALL,LoginActivity.this);
-                break;
+            //case R.id.btn_custom_login:
+              //  btn_kakao_login.performClick();
+          //      Session session = Session.getCurrentSession();
+            //    session.addCallback(new SessionCallback());
+              //  session.open(AuthType.KAKAO_LOGIN_ALL,LoginActivity.this);
+        //        break;
 
             case R.id.loginBtn:
                 break;
@@ -144,5 +164,6 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
                 //presenter.Login(id, pw);
                 break;
         }
+
     }
 }
