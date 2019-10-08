@@ -1,14 +1,13 @@
 package com.example.samplesenti.presenter;
 
-import android.app.Activity;
 import android.content.Context;
+
 import com.kakao.auth.ApprovalType;
 import com.kakao.auth.AuthType;
 import com.kakao.auth.IApplicationConfig;
-
 import com.kakao.auth.ISessionConfig;
-
 import com.kakao.auth.KakaoAdapter;
+
 public class KakaoSDKAdapter extends KakaoAdapter{
     // 로그인 시 사용 될, Session의 옵션 설정을 위한 인터페이스 입니다.
 
