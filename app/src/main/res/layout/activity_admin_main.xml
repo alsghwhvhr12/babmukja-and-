@@ -14,10 +14,17 @@
         tools:layout_editor_absoluteY="265dp">
 
         <Button
-            android:id="@+id/mNotice"
+            android:id="@+id/nInsert"
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:text="공지사항등록"
             android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/nEdit"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:text="공지사항수정"
+            android:textSize="24sp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

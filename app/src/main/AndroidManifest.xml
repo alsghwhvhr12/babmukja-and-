@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.AdminMainActivity"></activity>
+        <activity android:name=".view.NoticeEditActivity"></activity>
+        <activity android:name=".view.NoticeRegisterActivity" />
+        <activity android:name=".view.AdminMainActivity" />
         <activity android:name=".view.CompanyMainActivity" />
         <activity android:name=".view.submain" />
         <activity android:name=".view.RegisterActivity" />
@@ -40,10 +42,10 @@
             android:name="com.kakao.sdk.AppKey"
             android:value="6a568fe135c3b4bb984443f97227eda9" />
     </application>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>
