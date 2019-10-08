@@ -45,7 +45,7 @@
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"
-            android:value="@string/kakao_app_key" />
+            android:value="6a568fe135c3b4bb984443f97227eda9" />
     </application>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

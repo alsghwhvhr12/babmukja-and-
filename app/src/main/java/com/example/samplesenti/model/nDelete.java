@@ -13,7 +13,7 @@ public class nDelete extends StringRequest {
 
     public nDelete(String title, Response.Listener<String> listener)
     {
-        super(Request.Method.POST,ServerURL.URL4,listener,null);
+        super(Request.Method.POST,ServerURL.URL5,listener,null);
         parameters = new HashMap<>();
         parameters.put("title",title);
     }

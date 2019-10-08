@@ -12,7 +12,7 @@ public class nRegister extends StringRequest {
 
     public nRegister(String title, String notice, Response.Listener<String> listener)
     {
-        super(Request.Method.POST,ServerURL.URL3,listener,null);
+        super(Request.Method.POST,ServerURL.URL4,listener,null);
         parameters = new HashMap<>();
         parameters.put("title",title);
         parameters.put("notice",notice);
