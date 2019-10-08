@@ -1,5 +1,6 @@
 package com.example.samplesenti.view;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,10 @@ import com.example.samplesenti.R;
 import com.example.samplesenti.model.Login_M;
 import com.example.samplesenti.model.ServerURL;
 import com.example.samplesenti.presenter.LoginPresenter;
+import com.example.samplesenti.presenter.SessionCallback;
+import com.kakao.auth.AuthType;
+import com.kakao.auth.Session;
+import com.kakao.usermgmt.LoginButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,10 +32,14 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
 
     private LoginInterface.Presenter presenter;
 
+    private Context mContext;
+    private Button btn_custom_login;
+    private LoginButton btn_kakao_login;
+
     private Button loginBtn;
     private Button registerBtn;
     private RadioGroup radioGroup;
-
+    private Button kakaoBtn;
 
     private EditText idEdit;
     private EditText passwordEdit;
@@ -42,13 +51,28 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        mContext = getApplicationContext();
+
 
         presenter = new LoginPresenter(LoginActivity.this,getApplicationContext(),this);
         presenter.presenterView();
+
+        btn_custom_login = (Button) findViewById(R.id.btn_custom_login);
+        btn_custom_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btn_kakao_login.performClick();
+            }
+        });
+        btn_kakao_login = (LoginButton) findViewById(R.id.btn_kakao_login);
     }
+
+
 
     @Override
     public void setView() {
+        kakaoBtn=(Button)findViewById(R.id.btn_custom_login) ;
+        kakaoBtn.setOnClickListener(this);
         loginBtn = (Button)findViewById(R.id.loginBtn);
         registerBtn = (Button)findViewById(R.id.registerBtn);
         idEdit = (EditText)findViewById(R.id.idEdit);
@@ -56,7 +80,6 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
         login = (Button)findViewById(R.id.login);
         googleLogin = (TextView)findViewById(R.id.googleLogin);
         radioGroup = (RadioGroup)findViewById(R.id.radioGroup);
-
         loginBtn.setOnClickListener(this);
         registerBtn.setOnClickListener(this);
         login.setOnClickListener(this);
@@ -67,6 +90,13 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            //case R.id.btn_custom_login:
+              //  btn_kakao_login.performClick();
+          //      Session session = Session.getCurrentSession();
+            //    session.addCallback(new SessionCallback());
+              //  session.open(AuthType.KAKAO_LOGIN_ALL,LoginActivity.this);
+        //        break;
+
             case R.id.loginBtn:
                 break;
             case R.id.registerBtn:
@@ -77,8 +107,10 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
             case R.id.login:
                 String id = idEdit.getText().toString();
                 String pw = passwordEdit.getText().toString();
-
-
+                //아이디값 or 이름값 넘겨줄것
+                Intent i = new Intent(LoginActivity.this,MainMenuAct.class);
+                i.putExtra("id",id);
+                //i.putExtra("name",name);
                 Response.Listener<String> responseListener = new Response.Listener<String>(){
                     public  void onResponse(String response){
                         try {
@@ -132,5 +164,6 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
                 //presenter.Login(id, pw);
                 break;
         }
+
     }
 }

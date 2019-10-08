@@ -5,8 +5,12 @@
 
 package com.example.samplesenti.view;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,11 +22,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainMenuAct extends AppCompatActivity {
 
-    private FragmentManager fragmentManager = getSupportFragmentManager();
+    private FragmentManager fragmentManager = getSupportFragmentManager(); //프레그먼트 선언
     private FragmentHome fragmentHome = new FragmentHome();
     private FragmentDashboard fragmentDashboard = new FragmentDashboard();
     private FragmentUser fragmentUser = new FragmentUser();
-
 
 
     @Override
@@ -35,6 +38,11 @@ public class MainMenuAct extends AppCompatActivity {
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(new ItemSelectedListener());
+        //이름or 아이디값을 받아옴
+        Intent intent = getIntent();
+        String Id=intent.getStringExtra(("id"));
+        TextView tvId= (TextView) findViewById(R.id.tvName);
+        tvId.setText(Id);
     }
 
 
