@@ -24,7 +24,6 @@ public class Register extends StringRequest {
         parameters.put("pw",pw);
         parameters.put("name",name);
     }
-
     @Override
     public Map<String,String> getParams(){
         return parameters;
