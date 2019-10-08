@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.samplesenti.R;
 
-public class submain extends AppCompatActivity {
+public class CompanyMainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_submain);
+        setContentView(R.layout.activity_company_main);
     }
 }
