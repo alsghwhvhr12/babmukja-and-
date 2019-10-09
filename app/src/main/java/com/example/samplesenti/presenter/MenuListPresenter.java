@@ -2,6 +2,7 @@
 //  Created by 이민호, 전재준, 배진우 on 18/09/2019.
 //  Copyright © 2019 이민호. All rights reserved.
 //
+
 package com.example.samplesenti.presenter;
 
 import android.app.Activity;
@@ -16,33 +17,33 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.example.samplesenti.R;
-import com.example.samplesenti.model.Notice;
-import com.example.samplesenti.model.nDelete;
+import com.example.samplesenti.model.Menu;
+import com.example.samplesenti.model.mDelete;
 
 import org.json.JSONObject;
 
 import java.util.List;
 
-public class NoticeListPresenter extends BaseAdapter {
+public class MenuListPresenter extends BaseAdapter {
+
     private Context context;
-    private List<Notice> noticeList;
+    private List<Menu> menuList;
     private Activity parentActivity;
 
-
-    public NoticeListPresenter(Context context, List<Notice> noticeList, Activity parentActivity){
+    public MenuListPresenter(Context context, List<Menu> menuList, Activity parentActivity){
         this.context = context;
-        this.noticeList = noticeList;
+        this.menuList = menuList;
         this.parentActivity = parentActivity;
     }
 
     @Override
     public int getCount() {
-        return noticeList.size();
+        return menuList.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return noticeList.get(i);
+        return menuList.get(i);
     }
 
     @Override
@@ -52,19 +53,21 @@ public class NoticeListPresenter extends BaseAdapter {
 
     @Override
     public View getView(final int i, View view, ViewGroup viewGroup) {
-        View v = View.inflate(context, R.layout.nolist_item, null);
+        View v = View.inflate(context, R.layout.melist_item, null);
 
-        final TextView nNo = (TextView)v.findViewById(R.id.nNo);
-        final TextView nTitle = (TextView)v.findViewById(R.id.nTitle);
-        TextView nNotice = (TextView)v.findViewById(R.id.nNotice);
+        final TextView mNo = (TextView)v.findViewById(R.id.mNo);
+        TextView mCompany_no = (TextView)v.findViewById(R.id.mCompany_no);
+        TextView mName = (TextView)v.findViewById(R.id.mName);
+        TextView mPrice = (TextView)v.findViewById(R.id.mPrice);
 
-        nNo.setText(noticeList.get(i).getNo());
-        nTitle.setText(noticeList.get(i).getTitle());
-        nNotice.setText(noticeList.get(i).getNotice());
+        mNo.setText(menuList.get(i).getNo());
+        mCompany_no.setText(menuList.get(i).getCompany_no());
+        mName.setText(menuList.get(i).getName());
+        mPrice.setText(menuList.get(i).getPrice());
 
-        v.setTag(noticeList.get(i).getNo());
+        v.setTag(menuList.get(i).getNo());
 
-        Button deleteButton = (Button)v.findViewById(R.id.nDelBtn);
+        Button deleteButton = (Button)v.findViewById(R.id.mDelBtn);
 
         deleteButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -76,7 +79,7 @@ public class NoticeListPresenter extends BaseAdapter {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
                             if(success){
-                                noticeList.remove(i);
+                                menuList.remove(i);
                                 notifyDataSetChanged();
                             }
                         }
@@ -85,7 +88,7 @@ public class NoticeListPresenter extends BaseAdapter {
                         }
                     }
                 };
-                nDelete delete = new nDelete(nNo.getText().toString(), responseListener);
+                mDelete delete = new mDelete(mNo.getText().toString(), responseListener);
 
                 RequestQueue queue = Volley.newRequestQueue(parentActivity);
 

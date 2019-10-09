@@ -12,15 +12,15 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-public class nRegister extends StringRequest {
-    private Map<String,String> parameters;
+public class mDelete extends StringRequest {
 
-    public nRegister(String title, String notice, Response.Listener<String> listener)
+    private Map<String, String> parameters;
+
+    public mDelete(String no, Response.Listener<String> listener)
     {
-        super(Request.Method.POST,ServerURL.URL4,listener,null);
+        super(Request.Method.POST,ServerURL.URL7,listener,null);
         parameters = new HashMap<>();
-        parameters.put("title",title);
-        parameters.put("notice",notice);
+        parameters.put("no",no);
     }
 
     @Override
