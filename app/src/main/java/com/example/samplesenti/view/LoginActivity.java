@@ -30,6 +30,7 @@ import com.kakao.auth.authorization.accesstoken.AccessToken;
 import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.LoginButton;
 import com.kakao.usermgmt.UserManagement;
+import com.kakao.usermgmt.callback.LogoutResponseCallback;
 import com.kakao.usermgmt.callback.MeV2ResponseCallback;
 import com.kakao.usermgmt.response.MeV2Response;
 import com.kakao.usermgmt.response.model.UserAccount;
@@ -79,6 +80,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
             Log.e("SessionCallback :: ", "onSessionOpenFailed : " + exception.getMessage());
         }
 
+
         // 사용자 정보 요청
         public void requestMe() {
             List<String> keys = new ArrayList<>();
@@ -92,7 +94,6 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
                    // goMainMenuActivity();
                     Log.e("SessionCallback :: ", "onSessionClosed : " + errorResult.getErrorMessage());
                 }
-
 
 
                 // 사용자 정보 요청 실패
@@ -113,6 +114,8 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
 
                     goMainMenuActivity(userid);
                 }
+
+
 
                 private void goMainMenuActivity(long userid){
 
@@ -151,7 +154,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
             }
         });
         btn_kakao_login = (LoginButton) findViewById(R.id.btn_kakao_login);
-        //******************************************//
+             //******************************************//
 
     }
 
