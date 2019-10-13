@@ -36,7 +36,6 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     private Button btn_custom_login;
     private LoginButton btn_kakao_login;
 
-    private Button loginBtn;
     private Button registerBtn;
     private RadioGroup radioGroup;
     private Button kakaoBtn;
@@ -45,7 +44,6 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     private EditText passwordEdit;
     private Button login;
 
-    private TextView googleLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,17 +71,13 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     public void setView() {
         kakaoBtn=(Button)findViewById(R.id.btn_custom_login) ;
         kakaoBtn.setOnClickListener(this);
-        loginBtn = (Button)findViewById(R.id.loginBtn);
         registerBtn = (Button)findViewById(R.id.registerBtn);
         idEdit = (EditText)findViewById(R.id.idEdit);
         passwordEdit = (EditText)findViewById(R.id.passwordEdit);
         login = (Button)findViewById(R.id.login);
-        googleLogin = (TextView)findViewById(R.id.googleLogin);
         radioGroup = (RadioGroup)findViewById(R.id.radioGroup);
-        loginBtn.setOnClickListener(this);
         registerBtn.setOnClickListener(this);
         login.setOnClickListener(this);
-        googleLogin.setOnClickListener(this);
     }
 
 
@@ -97,8 +91,6 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
               //  session.open(AuthType.KAKAO_LOGIN_ALL,LoginActivity.this);
         //        break;
 
-            case R.id.loginBtn:
-                break;
             case R.id.registerBtn:
                 final Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(intent);
