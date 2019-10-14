@@ -35,10 +35,13 @@
         <Button
 
             android:id="@+id/btn_custom_login"
-            android:layout_width="match_parent"
+            android:layout_width="378dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="82dp"
+            android:layout_marginEnd="41dp"
+            android:layout_marginBottom="84dp"
+            android:background="@color/com_kakao_button_background_press"
             android:text="카카오 로그인" />
 
         <com.kakao.usermgmt.LoginButton
