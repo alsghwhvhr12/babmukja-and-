@@ -5,20 +5,35 @@
 
 package com.example.samplesenti.model;
 
-public class Menu implements IMenu {
+public class Menu {
 
-    private int no, company_no, price;
-    private String name;
+    private String name, no, company_no, price;
 
-    public void setNo(int no) {
+    public String getNo() {
+        return no;
+    }
+
+    public String getCompany_no() {
+        return company_no;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setNo(String no) {
         this.no = no;
     }
 
-    public void setCompany_no(int company_no) {
+    public void setCompany_no(String company_no) {
         this.company_no = company_no;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -26,23 +41,12 @@ public class Menu implements IMenu {
         this.name = name;
     }
 
-    @Override
-    public int getNo() {
-        return no;
+    public Menu(String no, String company_no, String price, String name){
+        this.no = no;
+        this.company_no = company_no;
+        this.price = price;
+        this.name = name;
     }
 
-    @Override
-    public int getCompany_no() {
-        return company_no;
-    }
 
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public int getPrice() {
-        return price;
-    }
 }

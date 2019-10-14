@@ -11,6 +11,6 @@
     <string name="title_activity_login">LoginActivity</string>
 
 
-        <string name="kakao_app_key">6a568fe135c3b4bb984443f97227eda9</string>
+    <string name="kakao_app_key">6a568fe135c3b4bb984443f97227eda9</string>
 
 </resources>

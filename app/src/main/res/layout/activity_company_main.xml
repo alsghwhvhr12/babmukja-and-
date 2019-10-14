@@ -21,13 +21,6 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/mDelete"
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:text="메뉴삭제"
-            android:textSize="24sp" />
-
-        <Button
             android:id="@+id/mEdit"
             android:layout_width="match_parent"
             android:layout_height="90dp"

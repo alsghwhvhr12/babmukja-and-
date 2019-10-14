@@ -11,35 +11,45 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/nNo"
+            android:id="@+id/mNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="번호"
-            android:gravity="center_vertical"
-            android:paddingLeft="10dp"
-            />
-        <TextView
-            android:id="@+id/nTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="제목"
             android:gravity="center_vertical"
             android:paddingLeft="10dp"
             android:textStyle="bold"
             android:textColor="#33aabb"
             />
         <TextView
-            android:id="@+id/nNotice"
+            android:id="@+id/mCompany_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="날짜"
+            android:text="회사명"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:textStyle="bold"
+            android:textColor="#33aabb"
+            />
+        <TextView
+            android:id="@+id/mName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="이름"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            />
+        <TextView
+            android:id="@+id/mPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="가격"
             android:gravity="center_vertical"
             android:paddingLeft="10dp"
             />
     </LinearLayout>
 
     <Button
-        android:id="@+id/nEditBtn"
+        android:id="@+id/mEditBtn"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:text="선택"
@@ -47,7 +57,7 @@
         />
 
     <Button
-        android:id="@+id/nDelBtn"
+        android:id="@+id/mDelBtn"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="20"

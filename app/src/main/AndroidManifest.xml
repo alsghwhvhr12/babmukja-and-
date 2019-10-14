@@ -11,10 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".view.HakDetailActivity"></activity>
+        <activity android:name=".view.MenuEditActivity"></activity>
+        <activity android:name=".view.MenuRegisterActivity" />
+        <activity android:name=".view.HakDetailActivity" />
         <activity android:name=".view.HakActivity" />
-        <activity android:name=".view.NoticeEditActivity"></activity>
+        <activity android:name=".view.NoticeEditActivity" />
         <activity android:name=".view.NoticeRegisterActivity" />
         <activity android:name=".view.AdminMainActivity" />
         <activity android:name=".view.CompanyMainActivity" />
@@ -40,19 +41,15 @@
         <activity android:name=".view.HistoryActivity" />
         <activity android:name=".view.MylecActivity" />
         <activity android:name=".view.VersionActivity" />
-        <activity android:name=".view.NoticeActivity" />
-        <!-- 카카오톡 메타데이터 -->
-
+        <activity android:name=".view.NoticeActivity" /> <!-- 카카오톡 메타데이터 -->
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="6a568fe135c3b4bb984443f97227eda9" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
