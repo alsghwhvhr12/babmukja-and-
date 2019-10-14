@@ -3,6 +3,7 @@ package com.example.samplesenti.view;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -21,18 +22,35 @@ import com.example.samplesenti.model.Login_M;
 import com.example.samplesenti.model.ServerURL;
 import com.example.samplesenti.presenter.LoginPresenter;
 import com.example.samplesenti.presenter.SessionCallback;
+import com.kakao.auth.AccessTokenCallback;
 import com.kakao.auth.AuthType;
+import com.kakao.auth.ISessionCallback;
 import com.kakao.auth.Session;
+import com.kakao.auth.authorization.accesstoken.AccessToken;
+import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.LoginButton;
+import com.kakao.usermgmt.UserManagement;
+import com.kakao.usermgmt.callback.LogoutResponseCallback;
+import com.kakao.usermgmt.callback.MeV2ResponseCallback;
+import com.kakao.usermgmt.response.MeV2Response;
+import com.kakao.usermgmt.response.model.UserAccount;
+import com.kakao.util.exception.KakaoException;
+import com.kakao.util.helper.log.Logger;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity implements LoginInterface.View, View.OnClickListener{
 
     private LoginInterface.Presenter presenter;
 
+    private SessionCallback callback;
+
     private Context mContext;
+
     private Button btn_custom_login;
     private LoginButton btn_kakao_login;
 
@@ -45,16 +63,87 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     private Button login;
 
 
+    /////////////////////////카카오 로그인 구현 부분////////////////////////////
+    public class SessionCallback implements ISessionCallback {
+
+        // 로그인에 성공한 상태
+        @Override
+        public void onSessionOpened()  {
+            requestMe();
+        }
+
+        // 로그인에 실패한 상태
+        @Override
+        public void onSessionOpenFailed(KakaoException exception) {
+            Log.e("SessionCallback :: ", "onSessionOpenFailed : " + exception.getMessage());
+        }
+
+
+        // 사용자 정보 요청
+        public void requestMe() {
+            List<String> keys = new ArrayList<>();
+
+
+            // 사용자정보 요청 결과에 대한 Callback
+            UserManagement.getInstance().me(keys,new MeV2ResponseCallback() {
+
+                @Override
+                public void onSessionClosed(ErrorResult errorResult) {
+                   // goMainMenuActivity();
+                    Log.e("SessionCallback :: ", "onSessionClosed : " + errorResult.getErrorMessage());
+                }
+
+
+                // 사용자 정보 요청 실패
+                @Override
+                public void onFailure(ErrorResult errorResult) {
+                    Log.e("SessionCallback :: ", "onFailure : " + errorResult.getErrorMessage());
+                }
+
+                // 사용자정보 요청에 성공한 경우,
+                @Override
+                public void onSuccess(MeV2Response response) {
+                    Log.d("user id : ",  response.getId()+"");
+                    Log.d("email: " , response.getKakaoAccount().getEmail()+"");
+                    Log.d("profile image: " , response.getKakaoAccount()+"");
+
+                    long userid = response.getId();
+                    String uEmail = response.getKakaoAccount().getEmail();
+
+                    goMainMenuActivity(userid);
+                }
+
+
+
+                private void goMainMenuActivity(long userid){
+
+                    Intent intent = new Intent(LoginActivity.this, MainMenuAct.class);
+                    intent.putExtra("userid",userid);
+                    startActivity(intent);
+                }
+
+            });
+        }
+    }
+
+
+    /////////////////////////카카오 로그인 구현 부분1////////////////////////////
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mContext = getApplicationContext();
 
+        //******************************************//
+        mContext = getApplicationContext();
+        callback = new SessionCallback();
+        Session.getCurrentSession().addCallback(callback);
+        Session.getCurrentSession().checkAndImplicitOpen();
+        //******************************************//
 
         presenter = new LoginPresenter(LoginActivity.this,getApplicationContext(),this);
         presenter.presenterView();
 
+        //******************************************//
         btn_custom_login = (Button) findViewById(R.id.btn_custom_login);
         btn_custom_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,14 +152,32 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
             }
         });
         btn_kakao_login = (LoginButton) findViewById(R.id.btn_kakao_login);
+             //******************************************//
+
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
+            return;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Session.getCurrentSession().removeCallback(callback);
+    }
 
     @Override
     public void setView() {
+        //******************************************//
         kakaoBtn=(Button)findViewById(R.id.btn_custom_login) ;
         kakaoBtn.setOnClickListener(this);
+
+        //******************************************//
+        loginBtn = (Button)findViewById(R.id.loginBtn);
         registerBtn = (Button)findViewById(R.id.registerBtn);
         idEdit = (EditText)findViewById(R.id.idEdit);
         passwordEdit = (EditText)findViewById(R.id.passwordEdit);
@@ -84,6 +191,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+
             //case R.id.btn_custom_login:
               //  btn_kakao_login.performClick();
           //      Session session = Session.getCurrentSession();
@@ -91,6 +199,9 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
               //  session.open(AuthType.KAKAO_LOGIN_ALL,LoginActivity.this);
         //        break;
 
+
+            case R.id.loginBtn:
+                break;
             case R.id.registerBtn:
                 final Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(intent);
