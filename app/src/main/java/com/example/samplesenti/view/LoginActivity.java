@@ -54,7 +54,6 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     private Button btn_custom_login;
     private LoginButton btn_kakao_login;
 
-    private Button loginBtn;
     private Button registerBtn;
     private RadioGroup radioGroup;
     private Button kakaoBtn;
@@ -63,7 +62,6 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     private EditText passwordEdit;
     private Button login;
 
-    private TextView googleLogin;
 
     /////////////////////////카카오 로그인 구현 부분////////////////////////////
     public class SessionCallback implements ISessionCallback {
@@ -177,24 +175,31 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
         //******************************************//
         kakaoBtn=(Button)findViewById(R.id.btn_custom_login) ;
         kakaoBtn.setOnClickListener(this);
+
         //******************************************//
         loginBtn = (Button)findViewById(R.id.loginBtn);
         registerBtn = (Button)findViewById(R.id.registerBtn);
         idEdit = (EditText)findViewById(R.id.idEdit);
         passwordEdit = (EditText)findViewById(R.id.passwordEdit);
         login = (Button)findViewById(R.id.login);
-        googleLogin = (TextView)findViewById(R.id.googleLogin);
         radioGroup = (RadioGroup)findViewById(R.id.radioGroup);
-        loginBtn.setOnClickListener(this);
         registerBtn.setOnClickListener(this);
         login.setOnClickListener(this);
-        googleLogin.setOnClickListener(this);
     }
 
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+
+            //case R.id.btn_custom_login:
+              //  btn_kakao_login.performClick();
+          //      Session session = Session.getCurrentSession();
+            //    session.addCallback(new SessionCallback());
+              //  session.open(AuthType.KAKAO_LOGIN_ALL,LoginActivity.this);
+        //        break;
+
+
             case R.id.loginBtn:
                 break;
             case R.id.registerBtn:

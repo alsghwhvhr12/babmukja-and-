@@ -37,7 +37,6 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
 
     public Button regist;
     public Button loginBtn;
-    public Button registerBtn;
     public Button valid;
 
     private AlertDialog dialog;
@@ -56,10 +55,8 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
     public void setView() {
         //버튼
         loginBtn = (Button)findViewById(R.id.loginBtn);
-        registerBtn = (Button)findViewById(R.id.registerBtn);
         regist=(Button)findViewById(R.id.regist);
         loginBtn.setOnClickListener(this);
-        registerBtn.setOnClickListener(this);
         regist.setOnClickListener(this);
         valid=(Button)findViewById(R.id.btnValid);
         valid.setOnClickListener(this);
@@ -84,8 +81,6 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
                 Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
                 startActivity(intent);
                 finish();
-                break;
-            case R.id.registerBtn:
                 break;
 
             case R.id.regist:
