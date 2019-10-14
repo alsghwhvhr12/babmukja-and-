@@ -39,10 +39,10 @@ public class MainMenuAct extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(new ItemSelectedListener());
         //이름or 아이디값을 받아옴
-        Intent intent = getIntent();
-        String Id=intent.getStringExtra(("id"));
+       Intent intent = getIntent();
+        Long Id=intent.getExtras().getLong("userid"+"");
         TextView tvId= (TextView) findViewById(R.id.tvName);
-        tvId.setText(Id);
+         tvId.setText(Id+"");
     }
 
 

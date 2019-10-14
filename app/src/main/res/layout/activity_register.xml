@@ -1,191 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
     tools:context=".view.LoginActivity">
 
-    <RelativeLayout
-        android:id="@+id/header"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:background="@drawable/register_background">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="Register"
-            android:textSize="32dp"
-            android:textStyle="bold" />
-    </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/relativeLayout5"
+            android:layout_width="411dp"
+            android:layout_height="77dp"
+            android:background="@drawable/tt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <RelativeLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/header">
-
-        <TextView
-            android:id="@+id/guide_center"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
-
-        <Button
-            android:id="@+id/loginBtn"
-            android:layout_width="100dp"
-            android:layout_height="35dp"
-            android:layout_alignRight="@+id/guide_center"
-            android:layout_marginRight="23dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/button_border"
-            android:text="Login"
-            android:textAllCaps="false"
-            android:textColor="#000000" />
-
-        <Button
-            android:id="@+id/registerBtn"
-            android:layout_width="100dp"
-            android:layout_height="35dp"
-            android:layout_alignLeft="@+id/guide_center"
-            android:layout_marginLeft="23dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/button_border_active"
-            android:text="Register"
-            android:textAllCaps="false"
-            android:textColor="#ffffff" />
-
-
-        <EditText
-            android:id="@+id/idEdit"
-            android:layout_width="257dp"
-            android:layout_height="45dp"
-            android:layout_above="@+id/passwordEdit"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="57dp"
-            android:background="@drawable/edit_border"
-            android:gravity="center"
-            android:hint="Eamil or ID"
-            android:textColor="#000000"
-            android:textColorHint="#6e6e6e"
-            android:textSize="15dp" />
-
-        <EditText
-            android:id="@+id/idName"
-            android:layout_width="257dp"
-            android:layout_height="40dp"
-            android:layout_above="@+id/passwordEdit"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/edit_border"
-            android:gravity="center"
-            android:hint="Name"
-            android:textColor="#000000"
-            android:textColorHint="#6e6e6e"
-            android:textSize="15dp" />
-
-        <EditText
-            android:id="@+id/passwordCheckEdit"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/passwordEdit"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginRight="40dp"
-            android:background="@drawable/edit_border"
-            android:gravity="center"
-            android:hint="Password Check"
-            android:inputType="textPassword"
-            android:textColor="#000000"
-            android:textColorHint="#6e6e6e"
-            android:textSize="15dp" />
-
-        <EditText
-            android:id="@+id/passwordEdit"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="3dp"
-            android:background="@drawable/edit_border"
-            android:gravity="center"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:textColor="#000000"
-            android:textColorHint="#6e6e6e"
-            android:textSize="15dp" />
-
-        <Button
-            android:id="@+id/regist"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="18dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:background="@drawable/button_border_active"
-            android:text="Sign Up"
-            android:textAllCaps="false" />
-
-        <Button
-            android:id="@+id/btnValid"
-            android:layout_width="100dp"
-            android:layout_height="45dp"
-            android:layout_alignRight="@+id/guide_center"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="-197dp"
-            android:layout_marginBottom="336dp"
-            android:background="@drawable/button_border"
-            android:text="ID중복체크"
-            android:textAllCaps="false"
-            android:textColor="#000000" />
-
-
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="150dp">
-
-            <RadioButton
-                android:id="@+id/radioUser"
+            <TextView
+                android:id="@+id/textView44"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="사용자" />
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="31dp"
+                android:text="회원가입"
+                android:textColor="#000000" />
 
-            <RadioButton
-                android:id="@+id/radioComp"
+            <Button
+                android:id="@+id/loginBtn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="37dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="385dp"
+                android:layout_marginRight="180dp"
+                android:background="@drawable/button_border"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textColor="#000000" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/container"
+            android:layout_width="412dp"
+            android:layout_height="656dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout5">
+
+            <Button
+                android:id="@+id/regist"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
                 android:layout_marginLeft="40dp"
-                android:layout_weight="1"
-                android:text="업체" />
+                android:layout_marginTop="344dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/button_border_active"
+                android:text="Sign Up"
+                android:textAllCaps="false" />
 
-            <RadioButton
-                android:id="@+id/radioAdmin"
+            <TextView
+                android:id="@+id/guide_vert4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_centerInParent="true" />
+
+
+            <EditText
+                android:id="@+id/idEdit"
+                android:layout_width="250dp"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="46dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/edit_border"
+                android:gravity="center"
+                android:hint="아이디 (이메일 주소)"
+                android:textColor="#000000"
+                android:textColorHint="#6e6e6e"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/idName"
+                android:layout_width="250dp"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/edit_border"
+                android:gravity="center"
+                android:hint="이름(실명 입력)"
+                android:textColor="#000000"
+                android:textColorHint="#6e6e6e"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/passwordEdit"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="153dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/edit_border"
+                android:gravity="center"
+                android:hint="비빌번호"
+                android:inputType="textPassword"
+                android:textColor="#000000"
+                android:textColorHint="#6e6e6e"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/passwordCheckEdit"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="211dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/edit_border"
+                android:gravity="center"
+                android:hint="비밀번호확인"
+                android:inputType="textPassword"
+                android:textColor="#000000"
+                android:textColorHint="#6e6e6e"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/btnValid"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_alignRight="@+id/guide_center"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginRight="-219dp"
+                android:background="@color/com_kakao_button_text_press"
+                android:text="ID중복체크"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_weight="1"
-                android:text="관리자" />
-        </RadioGroup>
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="66dp"
+                android:layout_marginTop="292dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="사용자" />
+
+                <RadioButton
+                    android:id="@+id/radioComp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_weight="1"
+                    android:text="업체" />
+
+                <RadioButton
+                    android:id="@+id/radioAdmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_weight="1"
+                    android:text="관리자" />
+            </RadioGroup>
 
 
-    </RelativeLayout>
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </RelativeLayout>
