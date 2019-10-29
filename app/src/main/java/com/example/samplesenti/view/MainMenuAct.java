@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -26,6 +28,7 @@ public class MainMenuAct extends AppCompatActivity {
     private FragmentHome fragmentHome = new FragmentHome();
     private FragmentDashboard fragmentDashboard = new FragmentDashboard();
     private FragmentUser fragmentUser = new FragmentUser();
+    private Button btnLogin;
 
 
     @Override
@@ -39,11 +42,25 @@ public class MainMenuAct extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(new ItemSelectedListener());
         //이름or 아이디값을 받아옴
-       Intent intent = getIntent();
+        btnLogin=(Button)findViewById(R.id.btnLogin);
+/*
+        Intent intent = getIntent();
         Long Id=intent.getExtras().getLong("userid"+"");
-        TextView tvId= (TextView) findViewById(R.id.tvName);
-         tvId.setText(Id+"");
+        Button btnLogin= (Button) findViewById(R.id.btnLogin);
+         btnLogin.setText(Id+"");
+*/
+
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+                startActivity(intent);
+                //finish();
+            }
+        });
     }
+
 
 
 

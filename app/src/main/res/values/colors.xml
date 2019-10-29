@@ -6,5 +6,6 @@
     <color name="colorWarning">#ED00CB</color>
     <color name="colorGray">#8C8C8C</color>
     <color name="colorYello">#FFCC00</color>
+    <color name="colorTransparent">#00ff0000</color>
 
 </resources>

@@ -11,6 +11,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -21,31 +22,32 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.samplesenti.R;
+import com.example.samplesenti.model.Login;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class MainActivity extends AppCompatActivity {
     private Context mContext;
-
+    Intent intent = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mContext = getApplicationContext();
         getHashKey(mContext);
+        setContentView(R.layout.activity_main);
 
-        Button btn_go = (Button) findViewById(R.id.moveButton);
-        btn_go.setOnClickListener(
-                new Button.OnClickListener() {
-                    public void onClick(View v) {
-                        //로그인화면
-                        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                        //액티비티 시작
-                        startActivity(intent);
-                    }
-                }
-        );
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                intent = new Intent(getApplicationContext(), MainMenuAct.class);
+                startActivity(intent);
+                finish();
+            }
+        },Login.loadingSecond);
     }
 
         // 프로젝트의 해시키를 반환
