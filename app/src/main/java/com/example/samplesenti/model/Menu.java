@@ -5,7 +5,9 @@
 
 package com.example.samplesenti.model;
 
-public class Menu {
+import java.io.Serializable;
+
+public class Menu implements Serializable {
 
     private String name, no, company_no, price;
 
