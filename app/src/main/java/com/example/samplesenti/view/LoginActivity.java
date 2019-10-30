@@ -149,6 +149,9 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
             @Override
             public void onClick(View view) {
                 btn_kakao_login.performClick();
+                Intent intent = new Intent(LoginActivity.this,MainMenuAct.class);
+                startActivity(intent);
+                finish();
             }
         });
         btn_kakao_login = (LoginButton) findViewById(R.id.btn_kakao_login);
@@ -201,6 +204,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
 
 
             case R.id.loginBtn:
+                finish();
                 break;
             case R.id.registerBtn:
                 final Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);

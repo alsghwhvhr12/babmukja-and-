@@ -97,6 +97,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
                             }catch(JSONException e){
                                 e.printStackTrace();
                             }
+                            Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
                         }
                     };
                     Register register = new Register(id,pw,name,responseListener);
