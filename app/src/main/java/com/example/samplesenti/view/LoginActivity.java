@@ -3,13 +3,11 @@ package com.example.samplesenti.view;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,21 +19,14 @@ import com.example.samplesenti.R;
 import com.example.samplesenti.model.Login_M;
 import com.example.samplesenti.model.ServerURL;
 import com.example.samplesenti.presenter.LoginPresenter;
-import com.example.samplesenti.presenter.SessionCallback;
-import com.kakao.auth.AccessTokenCallback;
-import com.kakao.auth.AuthType;
 import com.kakao.auth.ISessionCallback;
 import com.kakao.auth.Session;
-import com.kakao.auth.authorization.accesstoken.AccessToken;
 import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.LoginButton;
 import com.kakao.usermgmt.UserManagement;
-import com.kakao.usermgmt.callback.LogoutResponseCallback;
 import com.kakao.usermgmt.callback.MeV2ResponseCallback;
 import com.kakao.usermgmt.response.MeV2Response;
-import com.kakao.usermgmt.response.model.UserAccount;
 import com.kakao.util.exception.KakaoException;
-import com.kakao.util.helper.log.Logger;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -180,7 +171,6 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
         kakaoBtn.setOnClickListener(this);
 
         //******************************************//
-        loginBtn = (Button)findViewById(R.id.loginBtn);
         registerBtn = (Button)findViewById(R.id.registerBtn);
         idEdit = (EditText)findViewById(R.id.idEdit);
         passwordEdit = (EditText)findViewById(R.id.passwordEdit);

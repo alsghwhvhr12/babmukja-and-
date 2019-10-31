@@ -4,15 +4,40 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tvhakItem1"
+        android:id="@+id/hakNo"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="1" />
-
+        android:layout_height="wrap_content"
+        android:text="번호"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:textStyle="bold"
+        android:textColor="#33aabb"
+        />
     <TextView
-        android:id="@+id/tvhakItem2"
+        android:id="@+id/hakCompany_no"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="TextView" />
+        android:layout_height="wrap_content"
+        android:text="회사명"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:textStyle="bold"
+        android:textColor="#33aabb"
+        />
+    <TextView
+        android:id="@+id/hakName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="이름"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        />
+    <TextView
+        android:id="@+id/hakPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="가격"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        />
 
 </LinearLayout>
