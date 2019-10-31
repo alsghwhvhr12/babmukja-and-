@@ -57,7 +57,7 @@ import android.content.SharedPreferences;
             editor.commit();
         }
 
-
+        public static final int loadingSecond = 1500; // 로딩시간
 
 
     }

@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     private EditText idEdit;
     private EditText passwordEdit;
     private Button login;
-
+    private Button loginBtn;
 
     /////////////////////////카카오 로그인 구현 부분////////////////////////////
     public class SessionCallback implements ISessionCallback {
@@ -140,6 +140,9 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
             @Override
             public void onClick(View view) {
                 btn_kakao_login.performClick();
+                Intent intent = new Intent(LoginActivity.this,MainMenuAct.class);
+                startActivity(intent);
+                finish();
             }
         });
         btn_kakao_login = (LoginButton) findViewById(R.id.btn_kakao_login);
@@ -191,6 +194,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
 
 
             case R.id.loginBtn:
+                finish();
                 break;
             case R.id.registerBtn:
                 final Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
@@ -207,40 +211,20 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
                 Response.Listener<String> responseListener = new Response.Listener<String>(){
                     public  void onResponse(String response){
                         try {
-                            int chk = radioGroup.getCheckedRadioButtonId();
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
                             if(success){
-                                if(chk == R.id.radioUser){
                                     String id = jsonObject.getString("id");
                                     String pw = jsonObject.getString("pw");
+
                                     Toast.makeText(getApplicationContext(),"성공",Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(LoginActivity.this,MainMenuAct.class);
                                     intent.putExtra("id",id);
                                     intent.putExtra("pw",pw);
+
                                     Log.d(ServerURL.Tag,"성공");
                                     startActivity(intent);
-                                }
-                                else if(chk == R.id.radioComp){
-                                    String id = jsonObject.getString("id");
-                                    String pw = jsonObject.getString("pw");
-                                    Toast.makeText(getApplicationContext(),"성공",Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(LoginActivity.this, CompanyMainActivity.class);
-                                    intent.putExtra("id",id);
-                                    intent.putExtra("pw",pw);
-                                    Log.d(ServerURL.Tag,"성공");
-                                    startActivity(intent);
-                                }
-                                else if(chk == R.id.radioAdmin){
-                                    String id = jsonObject.getString("id");
-                                    String pw = jsonObject.getString("pw");
-                                    Toast.makeText(getApplicationContext(),"성공",Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(LoginActivity.this,AdminMainActivity.class);
-                                    intent.putExtra("id",id);
-                                    intent.putExtra("pw",pw);
-                                    Log.d(ServerURL.Tag,"성공");
-                                    startActivity(intent);
-                                }
+                                    finish();
                             }else{
                                 Toast.makeText(getApplicationContext(),"실패",Toast.LENGTH_SHORT).show();
                                 return ;

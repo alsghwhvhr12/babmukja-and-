@@ -18,14 +18,14 @@
         <Button
 
             android:id="@+id/btn_custom_login"
-            android:layout_width="378dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/guide_vert"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="0dp"
-            android:layout_marginBottom="-183dp"
-            android:backgroundTint="#FFEB3B"
+            android:layout_marginBottom="-179dp"
             android:background="@color/com_kakao_button_background_press"
+            android:backgroundTint="#FFEB3B"
             android:text="카카오 로그인" />
 
         <com.kakao.usermgmt.LoginButton
