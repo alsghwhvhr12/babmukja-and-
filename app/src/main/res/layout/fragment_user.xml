@@ -38,7 +38,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tvNick"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -93,19 +93,33 @@
             <Button
 
                 android:id="@+id/btn_custom_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="177dp"
+                android:layout_height="67dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="41dp"
                 android:layout_marginBottom="84dp"
-                android:background="@color/com_kakao_button_background_press"
-                android:text="카카오 로그아웃" />
+                android:background="@drawable/kakao_login_button_background"
+                android:baselineAligned="false"
+                android:text="로그인" />
+
+            <Button
+
+                android:id="@+id/btn_custom_logout"
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="41dp"
+                android:layout_marginBottom="84dp"
+                android:background="@drawable/kakao_login_button_background"
+                android:baselineAligned="false"
+                android:text="로그아웃" />
 
             <com.kakao.usermgmt.LoginButton
                 android:id="@+id/btn_kakao_login"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:visibility="gone" />
 
         </LinearLayout>

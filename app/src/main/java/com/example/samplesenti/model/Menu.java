@@ -7,6 +7,7 @@ package com.example.samplesenti.model;
 
 import java.io.Serializable;
 
+
 public class Menu implements Serializable {
 
     private String name, no, company_no, price, k_id;

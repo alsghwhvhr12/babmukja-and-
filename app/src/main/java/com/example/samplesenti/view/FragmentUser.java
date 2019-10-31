@@ -9,18 +9,19 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import com.example.samplesenti.view.LoginActivity;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import android.content.Context;
 
 import com.example.samplesenti.R;
-import com.kakao.auth.ApiResponseCallback;
 import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
@@ -31,8 +32,24 @@ import com.kakao.util.helper.log.Logger;
 public class FragmentUser extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_user,container,false);
-
+        View view = inflater.inflate(R.layout.fragment_user, container, false);
+        TextView tvNick = (TextView) view.findViewById(R.id.tvNick);
+        Button btn_logut = (Button) view.findViewById(R.id.btn_custom_logout);
+        Bundle bundle = this.getArguments();
+        if(bundle!=null)
+        {
+            bundle =getArguments();
+            String nickname = bundle.getString("id","0");
+            tvNick.setText(nickname);
+        }else{
+            tvNick.setText("번들 전달 실패");
+        }
+        btn_logut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickLogout();
+            }
+        });
 
         Button btn_go = (Button) view.findViewById(R.id.notice);
         btn_go.setOnClickListener(new View.OnClickListener() {
@@ -70,11 +87,13 @@ public class FragmentUser extends Fragment {
             }
         });
 
+
         Button btn_logout = (Button) view.findViewById(R.id.btn_custom_login);
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onClickLogout();
+               // onClickLogout();
+                goLogout();
             }
         });
 
@@ -124,6 +143,9 @@ public class FragmentUser extends Fragment {
 
     }
 
+
+
+///로그아웃
     private void onClickLogout() {
         UserManagement.getInstance().requestLogout(new LogoutResponseCallback() {
             @Override
@@ -146,6 +168,7 @@ public class FragmentUser extends Fragment {
 
             @Override
             public void onCompleteLogout() {
+                Log.d("logout","Logout");
                 goLogout();
             }
         });
@@ -155,6 +178,7 @@ public class FragmentUser extends Fragment {
 
         Intent intent = new Intent(getActivity(), LoginActivity.class);
         startActivity(intent);
+
     }
 
 
