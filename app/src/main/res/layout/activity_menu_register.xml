@@ -30,8 +30,19 @@
             android:layout_height="wrap_content"
             android:text="회사명" />
 
-        <EditText
-            android:id="@+id/mCompany_no"
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView49"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="구분" />
+
+        <Spinner
+            android:id="@+id/spinner2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

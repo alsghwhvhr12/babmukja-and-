@@ -62,7 +62,7 @@ public class MenuEditActivity extends AppCompatActivity {
                 mPrice = object.getString("price");
 
                 //값들을 User클래스에 묶어줍니다
-                Menu menu = new Menu(mNo, mCompany_no, mName, mPrice);
+                Menu menu = new Menu(mNo, mCompany_no, mName, mPrice, "1");
                 menuList.add(menu);//리스트뷰에 값을 추가해줍니다
                 count++;
             }
