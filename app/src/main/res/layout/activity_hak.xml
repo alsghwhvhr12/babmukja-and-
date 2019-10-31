@@ -6,11 +6,63 @@
     android:layout_height="match_parent"
     tools:context=".view.HakActivity">
 
-    <ListView
-        android:id="@+id/lvHak"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/MmeEtb"/>
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="학식A"
+        android:background="@color/colorGray"
         app:layout_constraintTop_toBottomOf="@id/MmeEtb" />
+
+    <ListView
+        android:id="@+id/lvHak1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView48"
+        tools:layout_editor_absoluteY="75dp">
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="학식B"
+        android:background="@color/colorGray"
+        app:layout_constraintTop_toBottomOf="@id/lvHak1"
+        tools:layout_editor_absoluteY="139dp" />
+
+    <ListView
+        android:id="@+id/lvHak2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView47"
+        tools:layout_editor_absoluteY="158dp">
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="학식C"
+        android:background="@color/colorGray"
+        app:layout_constraintTop_toBottomOf="@id/lvHak2"
+        tools:layout_editor_absoluteY="222dp" />
+
+    <ListView
+        android:id="@+id/lvHak3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView50"
+        tools:layout_editor_absoluteY="241dp">
+
+    </ListView>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/MmeEtb"
