@@ -33,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
     public EditText idEdit;
     public EditText passwordEdit;
     public EditText passwordCheckEdit;
-    public EditText idName;
+    //public EditText idName;
 
     public Button regist;
     public Button loginBtn;
@@ -62,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
         valid.setOnClickListener(this);
         //텍스트
         idEdit=(EditText)findViewById(R.id.idEdit);
-        idName=(EditText)findViewById(R.id.idName);
+        //idName=(EditText)findViewById(R.id.idName);
         passwordEdit=(EditText)findViewById(R.id.passwordEdit);
         passwordCheckEdit=(EditText)findViewById(R.id.passwordCheckEdit);
 
@@ -74,7 +74,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
 
         final String id = idEdit.getText().toString();
         final String pw = passwordEdit.getText().toString();
-        final String name = idName.getText().toString();
+        //final String name = idName.getText().toString();
 
         switch (v.getId()){
             case R.id.loginBtn:
@@ -86,7 +86,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
             case R.id.regist:
                 if(validate=true
                         &&idEdit.length()>5
-                        &&idName.length()>2
+                        //&&idName.length()>2
                         &&passwordEdit.getText().toString().equals(passwordCheckEdit.getText().toString()))
                 {
                     Response.Listener<String> responseListener = new Response.Listener<String>(){
@@ -97,9 +97,10 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
                             }catch(JSONException e){
                                 e.printStackTrace();
                             }
+                            Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
                         }
                     };
-                    Register register = new Register(id,pw,name,responseListener);
+                    Register register = new Register(id,pw,responseListener); //name
                     RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
                     queue.add(register);
                     Toast.makeText(getApplicationContext(),"true.",Toast.LENGTH_SHORT).show();

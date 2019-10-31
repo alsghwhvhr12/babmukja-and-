@@ -11,6 +11,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -52,7 +53,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     private EditText idEdit;
     private EditText passwordEdit;
     private Button login;
-
+    private Button loginBtn;
 
     /////////////////////////카카오 로그인 구현 부분////////////////////////////
     public class SessionCallback implements ISessionCallback {
@@ -60,6 +61,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
         // 로그인에 성공한 상태
         @Override
         public void onSessionOpened()  {
+
             requestMe();
         }
 
@@ -97,22 +99,20 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
                     Log.d("user id : ",  response.getId()+"");
                     Log.d("email: " , response.getKakaoAccount().getEmail()+"");
                     Log.d("profile image: " , response.getKakaoAccount()+"");
+                    Log.d("user id : ",  response.getNickname()+"");
 
-                    long userid = response.getId();
-                    String uEmail = response.getKakaoAccount().getEmail();
+                    String userNIck = response.getNickname();
 
-                    goMainMenuActivity(userid);
+                    goMainMenuActivity();
                 }
 
 
 
-                private void goMainMenuActivity(long userid){
-
+                private void goMainMenuActivity( ){
                     Intent intent = new Intent(LoginActivity.this, MainMenuAct.class);
-                    intent.putExtra("userid",userid);
                     startActivity(intent);
+                    finish();
                 }
-
             });
         }
     }
@@ -140,6 +140,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
             @Override
             public void onClick(View view) {
                 btn_kakao_login.performClick();
+                finish();
             }
         });
         btn_kakao_login = (LoginButton) findViewById(R.id.btn_kakao_login);
@@ -191,6 +192,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
 
 
             case R.id.loginBtn:
+                finish();
                 break;
             case R.id.registerBtn:
                 final Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
@@ -198,6 +200,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
                 finish();
                 break;
             case R.id.login:
+
                 String id = idEdit.getText().toString();
                 String pw = passwordEdit.getText().toString();
                 //아이디값 or 이름값 넘겨줄것
@@ -207,40 +210,26 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
                 Response.Listener<String> responseListener = new Response.Listener<String>(){
                     public  void onResponse(String response){
                         try {
-                            int chk = radioGroup.getCheckedRadioButtonId();
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
                             if(success){
-                                if(chk == R.id.radioUser){
                                     String id = jsonObject.getString("id");
                                     String pw = jsonObject.getString("pw");
+
                                     Toast.makeText(getApplicationContext(),"성공",Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(LoginActivity.this,MainMenuAct.class);
                                     intent.putExtra("id",id);
                                     intent.putExtra("pw",pw);
                                     Log.d(ServerURL.Tag,"성공");
+
+                                     FragmentUser user = new FragmentUser();
+                                     Bundle bundle = new Bundle();
+                                     bundle.putString("id",id);
+                                     user.setArguments(bundle);
+
+
                                     startActivity(intent);
-                                }
-                                else if(chk == R.id.radioComp){
-                                    String id = jsonObject.getString("id");
-                                    String pw = jsonObject.getString("pw");
-                                    Toast.makeText(getApplicationContext(),"성공",Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(LoginActivity.this, CompanyMainActivity.class);
-                                    intent.putExtra("id",id);
-                                    intent.putExtra("pw",pw);
-                                    Log.d(ServerURL.Tag,"성공");
-                                    startActivity(intent);
-                                }
-                                else if(chk == R.id.radioAdmin){
-                                    String id = jsonObject.getString("id");
-                                    String pw = jsonObject.getString("pw");
-                                    Toast.makeText(getApplicationContext(),"성공",Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(LoginActivity.this,AdminMainActivity.class);
-                                    intent.putExtra("id",id);
-                                    intent.putExtra("pw",pw);
-                                    Log.d(ServerURL.Tag,"성공");
-                                    startActivity(intent);
-                                }
+                                    finish();
                             }else{
                                 Toast.makeText(getApplicationContext(),"실패",Toast.LENGTH_SHORT).show();
                                 return ;

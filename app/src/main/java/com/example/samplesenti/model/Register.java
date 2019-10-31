@@ -16,13 +16,13 @@ public class Register extends StringRequest {
 
     private Map<String,String> parameters;
 
-    public Register(String id, String pw,String name, Response.Listener<String> listener)
+    public Register(String id, String pw, Response.Listener<String> listener)
     {
         super(Request.Method.POST,ServerURL.URL,listener,null);
         parameters = new HashMap<>();
         parameters.put("id",id);
         parameters.put("pw",pw);
-        parameters.put("name",name);
+        //parameters.put("name",name);
     }
     @Override
     public Map<String,String> getParams(){

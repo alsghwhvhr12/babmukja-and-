@@ -35,12 +35,14 @@ public class HakActivity extends AppCompatActivity {
     private List<Menu> menuList2;
     private List<Menu> menuList3;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hak);
 
         Intent intent = getIntent();
+
         listView1 = (ListView)findViewById(R.id.lvHak1);
         listView2 = (ListView)findViewById(R.id.lvHak2);
         listView3 = (ListView)findViewById(R.id.lvHak3);

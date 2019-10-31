@@ -18,14 +18,14 @@
         <Button
 
             android:id="@+id/btn_custom_login"
-            android:layout_width="378dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/guide_vert"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="0dp"
-            android:layout_marginBottom="-183dp"
-            android:backgroundTint="#FFEB3B"
+            android:layout_marginBottom="-179dp"
             android:background="@color/com_kakao_button_background_press"
+            android:backgroundTint="#FFEB3B"
             android:text="카카오 로그인" />
 
         <com.kakao.usermgmt.LoginButton
@@ -104,40 +104,6 @@
             android:backgroundTint="#00BCD4"
             android:text="Login"
             android:textAllCaps="false" />
-
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/guide_vert"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="63dp"
-            android:layout_marginBottom="32dp"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/radioUser"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="사용자" />
-
-            <RadioButton
-                android:id="@+id/radioComp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_weight="1"
-                android:text="업체" />
-
-            <RadioButton
-                android:id="@+id/radioAdmin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_weight="1"
-                android:text="관리자" />
-        </RadioGroup>
 
         <TextView
             android:id="@+id/textView7"
