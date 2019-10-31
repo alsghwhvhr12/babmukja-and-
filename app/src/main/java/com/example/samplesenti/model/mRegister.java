@@ -16,11 +16,12 @@ public class mRegister extends StringRequest {
 
     private Map<String,String> parameters;
 
-    public mRegister(String company_no, String name, String price, Response.Listener<String> listener)
+    public mRegister(String company_no,String k_id, String name, String price, Response.Listener<String> listener)
     {
         super(Request.Method.POST,ServerURL.URL6,listener,null);
         parameters = new HashMap<>();
         parameters.put("company_no",company_no);
+        parameters.put("k_id",k_id);
         parameters.put("name",name);
         parameters.put("price",price);
     }

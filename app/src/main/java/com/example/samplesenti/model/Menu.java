@@ -7,9 +7,10 @@ package com.example.samplesenti.model;
 
 import java.io.Serializable;
 
+
 public class Menu implements Serializable {
 
-    private String name, no, company_no, price;
+    private String name, no, company_no, price, k_id;
 
     public String getNo() {
         return no;
@@ -25,6 +26,10 @@ public class Menu implements Serializable {
 
     public String getName() {
         return name;
+    }
+
+    public String getK_id() {
+        return k_id;
     }
 
     public void setNo(String no) {
@@ -43,11 +48,16 @@ public class Menu implements Serializable {
         this.name = name;
     }
 
-    public Menu(String no, String company_no, String price, String name){
+    public void setK_id(String k_id) {
+        this.k_id = k_id;
+    }
+
+    public Menu(String no, String company_no, String price, String name, String k_id){
         this.no = no;
         this.company_no = company_no;
         this.price = price;
         this.name = name;
+        this.k_id = k_id;
     }
 
 

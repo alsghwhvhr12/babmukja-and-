@@ -9,8 +9,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +28,8 @@ import com.example.samplesenti.presenter.MenuRegisterPresenter;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class MenuRegisterActivity extends AppCompatActivity implements IMenuRegisterActivity.View, View.OnClickListener{
 
     private IMenuRegisterActivity.Presenter presenter;
@@ -33,6 +37,8 @@ public class MenuRegisterActivity extends AppCompatActivity implements IMenuRegi
     public EditText mCompany_no;
     public EditText mName;
     public EditText mPrice;
+    public Spinner spinner;
+    public Spinner spinner2;
 
     public Button mRegBtn;
 
@@ -43,6 +49,25 @@ public class MenuRegisterActivity extends AppCompatActivity implements IMenuRegi
 
         presenter = new MenuRegisterPresenter(MenuRegisterActivity.this, getApplicationContext(),this);
         presenter.presenterView();
+
+        ArrayList<String> list = new ArrayList<>();
+        list.add("학식A");
+        list.add("학식B");
+        list.add("학식C");
+        list.add("민들레뜨락");
+        list.add("피자굽는오빠");
+
+        ArrayList<String> list2 = new ArrayList<>();
+        list2.add("학식");
+        list2.add("민들레뜨락");
+        list2.add("피자굽는오빠");
+
+        ArrayAdapter spinnerAdapter;
+        spinnerAdapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, list);
+        spinner2.setAdapter(spinnerAdapter);
+
+        spinnerAdapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, list2);
+        spinner.setAdapter(spinnerAdapter);
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.meRtb);
         setSupportActionBar(mToolbar);
@@ -59,14 +84,17 @@ public class MenuRegisterActivity extends AppCompatActivity implements IMenuRegi
         mCompany_no=(EditText)findViewById(R.id.mCompany_no);
         mName=(EditText)findViewById(R.id.mName);
         mPrice=(EditText)findViewById(R.id.mPrice);
+        spinner=(Spinner)findViewById(R.id.spinner);
+        spinner2=(Spinner)findViewById(R.id.spinner2);
     }
 
     @Override
     public void onClick(View v) {
 
-        final String Company_no = mCompany_no.getText().toString();
+        final String Company_no = String.valueOf(spinner.getSelectedItemPosition()+1);
         final String Name = mName.getText().toString();
         final String Price = mPrice.getText().toString();
+        final String K_id = String.valueOf(spinner2.getSelectedItemPosition()+1);
         switch (v.getId()){
             case R.id.mRegBtn:
                 if(mName.length()>2)
@@ -81,7 +109,7 @@ public class MenuRegisterActivity extends AppCompatActivity implements IMenuRegi
                             }
                         }
                     };
-                    mRegister register = new mRegister(Company_no,Name,Price,responseListener);
+                    mRegister register = new mRegister(Company_no,K_id,Name,Price,responseListener);
                     RequestQueue queue = Volley.newRequestQueue(MenuRegisterActivity.this);
                     queue.add(register);
                     Toast.makeText(getApplicationContext(),"true.",Toast.LENGTH_SHORT).show();
