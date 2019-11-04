@@ -11,7 +11,6 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -173,7 +172,6 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
         idEdit = (EditText)findViewById(R.id.idEdit);
         passwordEdit = (EditText)findViewById(R.id.passwordEdit);
         login = (Button)findViewById(R.id.login);
-        radioGroup = (RadioGroup)findViewById(R.id.radioGroup);
         registerBtn.setOnClickListener(this);
         login.setOnClickListener(this);
     }

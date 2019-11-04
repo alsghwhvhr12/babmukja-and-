@@ -6,104 +6,68 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="10dp"
+        android:id="@+id/editSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:hint=" 입력해주세요"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView7"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton7"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="wrap_content"
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+        android:background="@color/colorGray"
+        android:text="학식"
+        app:layout_constraintTop_toBottomOf="@id/editSearch"
+        android:layout_marginTop="30dp"/>
 
-    <ScrollView
-        android:id="@+id/scrollView7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="9dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton7">
+    <ListView
+        android:id="@+id/lvFood1"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:layout_constraintTop_toBottomOf="@id/tv1">
 
-        <LinearLayout
-            android:layout_width="403dp"
-            android:layout_height="177dp"
-            android:orientation="vertical">
+    </ListView>
 
-            <RelativeLayout
-                android:layout_width="403dp"
-                android:layout_height="177dp">
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGray"
+        android:text="민들레뜨락"
+        app:layout_constraintTop_toBottomOf="@id/lvFood1"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="526dp" />
 
-                <ImageButton
-                    android:id="@+id/imageButton9"
-                    android:layout_width="161dp"
-                    android:layout_height="178dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="1dp"
-                    android:layout_marginTop="2dp"
-                    app:srcCompat="@drawable/face" />
+    <ListView
+        android:id="@+id/lvFood2"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:layout_constraintTop_toBottomOf="@id/tv2">
 
-                <TextView
-                    android:id="@+id/textView33"
-                    android:layout_width="101dp"
-                    android:layout_height="61dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="121dp"
-                    android:text="TextView" />
+    </ListView>
 
-                <TextView
-                    android:id="@+id/textView34"
-                    android:layout_width="101dp"
-                    android:layout_height="144dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="9dp"
-                    android:text="TextView" />
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGray"
+        android:text="피자굽는오빠"
+        app:layout_constraintTop_toBottomOf="@id/lvFood2"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="582dp" />
 
-                <TextView
-                    android:id="@+id/textView35"
-                    android:layout_width="101dp"
-                    android:layout_height="61dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="100dp"
-                    android:layout_marginEnd="120dp"
-                    android:text="TextView" />
+    <ListView
+        android:id="@+id/lvFood3"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:layout_constraintTop_toBottomOf="@id/tv3">
 
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="39dp"
-                android:layout_alignParentStart="true">
-
-            </RelativeLayout>
-        </LinearLayout>
-    </ScrollView>
+    </ListView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
