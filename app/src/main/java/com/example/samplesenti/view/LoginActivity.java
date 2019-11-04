@@ -173,7 +173,6 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
         idEdit = (EditText)findViewById(R.id.idEdit);
         passwordEdit = (EditText)findViewById(R.id.passwordEdit);
         login = (Button)findViewById(R.id.login);
-        radioGroup = (RadioGroup)findViewById(R.id.radioGroup);
         registerBtn.setOnClickListener(this);
         login.setOnClickListener(this);
     }
