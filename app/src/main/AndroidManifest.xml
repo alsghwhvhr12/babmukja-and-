@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.samplesenti">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".presenter.KakaoPresenter"
         android:allowBackup="true"
@@ -11,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.MenuEditActivity"></activity>
+        <activity android:name=".view.OrderActivity"></activity>
+        <activity android:name=".view.MenuEditActivity" />
         <activity android:name=".view.MenuRegisterActivity" />
         <activity android:name=".view.HakDetailActivity" />
         <activity android:name=".view.HakActivity" />
@@ -46,10 +53,5 @@
             android:name="com.kakao.sdk.AppKey"
             android:value="6a568fe135c3b4bb984443f97227eda9" />
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

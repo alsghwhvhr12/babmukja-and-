@@ -4,29 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.HakDetailActivity">
+    tools:context=".view.OrderActivity">
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/detailmeEtb"
-        android:orientation="vertical">
+        app:layout_constraintTop_toBottomOf="@id/MmeEtb" />
 
-        <TextView
-            android:id="@+id/detailHakName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+    <TextView
+        android:id="@+id/tvOrder1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary"
+        android:text="장바구니"
+        app:layout_constraintTop_toBottomOf="@id/MmeEtb" />
 
-        <TextView
-            android:id="@+id/detailHakPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-    </LinearLayout>
+    <ListView
+        android:id="@+id/lvOrder1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvOrder1"
+        tools:layout_editor_absoluteY="75dp">
+
+    </ListView>
+
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/detailmeEtb"
+        android:id="@+id/MmeEtb"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#000000"
@@ -38,13 +43,12 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <Button
-        android:id="@+id/btnOrder"
+        android:id="@+id/btnBuy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="305dp"
-        android:text="장바구니"
+        android:layout_marginBottom="54dp"
+        android:text="주문하기"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
