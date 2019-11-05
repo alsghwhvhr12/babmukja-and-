@@ -46,6 +46,7 @@ public class MainMenuAct extends AppCompatActivity {
     private FragmentManager fragmentManager = getSupportFragmentManager(); //프레그먼트 선언
     private FragmentHome fragmentHome = new FragmentHome();
     private FragmentDashboard fragmentDashboard = new FragmentDashboard();
+    private FragmentHistory fragmentHistory = new FragmentHistory();
     private FragmentUser fragmentUser = new FragmentUser();
     private Button btnNavi;
     public FragmentTransaction transaction;
@@ -106,7 +107,9 @@ public class MainMenuAct extends AppCompatActivity {
                     break;
                 case R.id.navigation_dashboard:
                     new BackgroundTask().execute();
-
+                    break;
+                case R.id.navigation_history:
+                    transaction.replace(R.id.frameLayout, fragmentHistory).commitAllowingStateLoss();
                     break;
                 case R.id.navigation_user:
                     transaction.replace(R.id.frameLayout, fragmentUser).commitAllowingStateLoss();

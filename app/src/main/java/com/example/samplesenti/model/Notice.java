@@ -5,10 +5,12 @@
 
 package com.example.samplesenti.model;
 
-public class Notice {
-    String no;
-    String title;
-    String notice;
+import java.io.Serializable;
+
+public class Notice implements Serializable {
+    private String no;
+    private String title;
+    private String notice;
 
     public String getNo() {
         return no;
