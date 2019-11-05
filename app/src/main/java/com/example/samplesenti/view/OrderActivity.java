@@ -40,7 +40,7 @@ public class OrderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_order);
         btnBuy=(Button)findViewById(R.id.btnBuy);
         pref=getSharedPreferences("com.example.samplesenti",MODE_PRIVATE);
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
  //       adapter1 = new mOrderListPresenter(getApplicationContext(), orderList1, this);
 
 
@@ -90,6 +90,9 @@ public class OrderActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = pref.edit();
                 editor.clear();
                 editor.commit();
+                Intent intent = new Intent(getApplicationContext(),MainMenuAct.class);
+                startActivity(intent);
+                finish();
             }
         });
 
