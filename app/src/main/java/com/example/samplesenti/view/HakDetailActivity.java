@@ -43,8 +43,9 @@ public class HakDetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         final Menu menu = (Menu) intent.getSerializableExtra("menu");
 
-        detailHakName.setText(menu.getName());
-        detailHakPrice.setText(menu.getPrice());
+        detailHakName.setText("상품명="+menu.getName());
+
+        detailHakPrice.setText("가격="+menu.getPrice()+"원");
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.detailmeEtb);
         setSupportActionBar(mToolbar);
