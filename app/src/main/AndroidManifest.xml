@@ -17,9 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".view.OrderActivity"></activity>
-        <activity android:name=".view.NoticeDetailActivity"></activity>
+        <activity android:name=".view.PiActivity"></activity>
+        <activity android:name=".view.MinActivity" />
+        <activity android:name=".view.OrderActivity" />
+        <activity android:name=".view.NoticeDetailActivity" />
         <activity android:name=".view.MenuEditActivity" />
         <activity android:name=".view.MenuRegisterActivity" />
         <activity android:name=".view.HakDetailActivity" />

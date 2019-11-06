@@ -3,7 +3,6 @@ package com.example.samplesenti.view;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +15,6 @@ import com.example.samplesenti.R;
 import com.example.samplesenti.model.Menu;
 import com.example.samplesenti.model.Order;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class HakDetailActivity extends AppCompatActivity {
@@ -45,7 +43,7 @@ public class HakDetailActivity extends AppCompatActivity {
         Intent intent = getIntent();
         final Menu menu = (Menu) intent.getSerializableExtra("menu");
 
-       detailHakName.setText(menu.getName());
+        detailHakName.setText(menu.getName());
         detailHakPrice.setText(menu.getPrice());
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.detailmeEtb);
@@ -57,28 +55,28 @@ public class HakDetailActivity extends AppCompatActivity {
              @Override
                public void onClick(View view) {
                 if(checkCount==0) {
-                    editor.putString("cname0", detailHakPrice.getText().toString());
-                    editor.putString("cprice0", detailHakName.getText().toString());
+                    editor.putString("cname0", detailHakName.getText().toString());
+                    editor.putString("cprice0", detailHakPrice.getText().toString());
                     editor.putInt("checkCount", checkCount + 1);
                     editor.commit();
                 }else if(checkCount==1){
-                    editor.putString("cname1", detailHakPrice.getText().toString());
-                    editor.putString("cprice1", detailHakName.getText().toString());
+                    editor.putString("cname1", detailHakName.getText().toString());
+                    editor.putString("cprice1", detailHakPrice.getText().toString());
                     editor.putInt("checkCount", checkCount + 1);
                     editor.commit();
                 }else if(checkCount==2) {
-                    editor.putString("cname2", detailHakPrice.getText().toString());
-                    editor.putString("cprice2", detailHakName.getText().toString());
+                    editor.putString("cname2", detailHakName.getText().toString());
+                    editor.putString("cprice2", detailHakPrice.getText().toString());
                     editor.putInt("checkCount", checkCount + 1);
                     editor.commit();
                 }else if(checkCount==3) {
-                    editor.putString("cname3", detailHakPrice.getText().toString());
-                    editor.putString("cprice3", detailHakName.getText().toString());
+                    editor.putString("cname3", detailHakName.getText().toString());
+                    editor.putString("cprice3", detailHakPrice.getText().toString());
                     editor.putInt("checkCount", checkCount + 1);
                     editor.commit();
                 }else if(checkCount==4) {
-                    editor.putString("cname4", detailHakPrice.getText().toString());
-                    editor.putString("cprice4", detailHakName.getText().toString());
+                    editor.putString("cname4", detailHakName.getText().toString());
+                    editor.putString("cprice4", detailHakPrice.getText().toString());
                     editor.putInt("checkCount", checkCount + 1);
                     editor.commit();
                 }

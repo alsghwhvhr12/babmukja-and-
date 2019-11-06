@@ -25,19 +25,36 @@ import java.net.URL;
 public class FragmentHome extends Fragment  {
 
 
-
+    public int i = 0;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home,container,false);
         final ImageButton hak = (ImageButton) view.findViewById(R.id.imageButton3);
         final ImageButton pig = (ImageButton) view.findViewById(R.id.imageButton2);
-        final   ImageButton min = (ImageButton)view.findViewById(R.id.imageButton);
+        final ImageButton min = (ImageButton)view.findViewById(R.id.imageButton);
         final Button map = (Button)view.findViewById(R.id.map);
 
         hak.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                i=1;
                 new BackgroundTask().execute();
                 }
+        });
+
+        min.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                i=2;
+                new BackgroundTask().execute();
+            }
+        });
+
+        pig.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                i=3;
+                new BackgroundTask().execute();
+            }
         });
 
         map.setOnClickListener(new View.OnClickListener(){
@@ -102,9 +119,21 @@ public class FragmentHome extends Fragment  {
 
         @Override
         protected void onPostExecute(String result) {
-            Intent intent = new Intent(getActivity(), HakActivity.class);
-            intent.putExtra("hakList", result);//파싱한 값을 넘겨줌
-            startActivity(intent);//ManagementActivity로 넘어감
+            if(i==1) {
+                Intent intent = new Intent(getActivity(), HakActivity.class);
+                intent.putExtra("hakList", result);//파싱한 값을 넘겨줌
+                startActivity(intent);//ManagementActivity로 넘어감
+            }
+            else if(i==2){
+                Intent intent = new Intent(getActivity(), MinActivity.class);
+                intent.putExtra("minList", result);//파싱한 값을 넘겨줌
+                startActivity(intent);//ManagementActivity로 넘어감
+            }
+            else if(i==3){
+                Intent intent = new Intent(getActivity(), PiActivity.class);
+                intent.putExtra("piList", result);//파싱한 값을 넘겨줌
+                startActivity(intent);//ManagementActivity로 넘어감
+            }
 
         }
 
