@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="my_array">
+        <item>학식</item>
+        <item>민뜨</item>
+        <item>피굽</item>
+    </string-array>
+</resources>

@@ -8,8 +8,12 @@ package com.example.samplesenti.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -33,22 +37,39 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
     public EditText idEdit;
     public EditText passwordEdit;
     public EditText passwordCheckEdit;
-    //public EditText idName;
+    public EditText iducode;
 
     public Button regist;
     public Button loginBtn;
     public Button valid;
 
+    public CheckBox all_check;
+    public CheckBox second;
+    public CheckBox third;
+    public CheckBox fourth;
+    public  Spinner spinner;
     private AlertDialog dialog;
     boolean validate = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        //스피너\
+        spinner =(Spinner)findViewById(R.id.spinner);
+
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.my_array ,android.R.layout.simple_spinner_item); //리스트를 추가해 놓고 그 리스트를 불러온다.
+        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        spinner.setAdapter(adapter); //스피너와 어댑터 연결
+
+
+
         presenter = new RegisterPresenter(RegisterActivity.this,getApplicationContext(),this);
         presenter.presenterView();
+
+
     }
 
     @Override
@@ -62,18 +83,26 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
         valid.setOnClickListener(this);
         //텍스트
         idEdit=(EditText)findViewById(R.id.idEdit);
-        //idName=(EditText)findViewById(R.id.idName);
+        iducode=(EditText)findViewById(R.id.iducode);
         passwordEdit=(EditText)findViewById(R.id.passwordEdit);
         passwordCheckEdit=(EditText)findViewById(R.id.passwordCheckEdit);
-
+        //라디오 버튼
+        all_check=(CheckBox)findViewById(R.id.all_check);
+        second=(CheckBox)findViewById(R.id.second);
+        third=(CheckBox)findViewById(R.id.third);
+        fourth=(CheckBox)findViewById(R.id.fourth);
+        //
 
     }
+
+
 
     @Override
     public void onClick(View v) {
 
         final String id = idEdit.getText().toString();
         final String pw = passwordEdit.getText().toString();
+        final String company_no = String.valueOf(spinner.getSelectedItemPosition()+1);
         //final String name = idName.getText().toString();
 
         switch (v.getId()){
@@ -100,7 +129,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
                             Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
                         }
                     };
-                    Register register = new Register(id,pw,responseListener); //name
+                    Register register = new Register(id,pw,company_no,responseListener); //name
                     RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
                     queue.add(register);
                     Toast.makeText(getApplicationContext(),"true.",Toast.LENGTH_SHORT).show();
@@ -111,7 +140,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
                 break;
             case R.id.btnValid:
                 if(validate){
-                return;
+                    return;
                 }
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -149,6 +178,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterInter
                 break;
         }
     }
+
 
 
 }

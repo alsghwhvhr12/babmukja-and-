@@ -41,7 +41,7 @@
                 android:layout_height="40dp"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="40dp"
-                android:layout_marginTop="504dp"
+                android:layout_marginTop="532dp"
                 android:layout_marginRight="40dp"
                 android:background="@drawable/button_border"
                 android:text="회원가입"
@@ -177,36 +177,6 @@
                 android:layout_marginEnd="0dp"
                 app:srcCompat="@android:color/darker_gray" />
 
-            <RadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="418dp"
-                android:text="이용 약관 동의" />
-
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="447dp"
-                android:text="개인정보 수집 및 이용동의" />
-
-            <RadioButton
-                android:id="@+id/radioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="388dp"
-                android:text="전체 동의" />
-
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="150dp"
@@ -216,8 +186,49 @@
                 android:layout_marginTop="318dp"
                 android:layout_marginEnd="168dp" />
 
+            <CheckBox
+                android:id="@+id/all_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="48dp"
+                android:layout_marginBottom="326dp"
+                android:text="전체 동의" />
+
+            <CheckBox
+                android:id="@+id/second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="48dp"
+                android:layout_marginBottom="290dp"
+                android:text="이용 약관 동의" />
+
+            <CheckBox
+                android:id="@+id/third"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="48dp"
+                android:layout_marginBottom="253dp"
+                android:text="개인정보 수집 및 이용동의" />
+
+            <CheckBox
+                android:id="@+id/fourth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="48dp"
+                android:layout_marginBottom="216dp"
+                android:text="위치기반 서비스 이용약관" />
+
 
         </RelativeLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
