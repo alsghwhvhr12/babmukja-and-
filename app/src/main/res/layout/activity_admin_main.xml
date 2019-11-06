@@ -26,5 +26,12 @@
             android:layout_height="90dp"
             android:text="공지사항수정"
             android:textSize="24sp"/>
+
+        <Button
+            android:id="@+id/nMenu"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:text="메뉴등록"
+            android:textSize="24sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

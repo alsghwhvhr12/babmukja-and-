@@ -15,7 +15,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -39,17 +38,9 @@ public class FragmentUser extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_user, container, false);
-        TextView tvNick = (TextView) view.findViewById(R.id.tvNick);
         Button btn_logut = (Button) view.findViewById(R.id.btn_custom_logout);
         Bundle bundle = this.getArguments();
-        if(bundle!=null)
-        {
-            bundle =getArguments();
-            String nickname = bundle.getString("id","0");
-            tvNick.setText(nickname);
-        }else{
-            tvNick.setText("번들 전달 실패");
-        }
+
         btn_logut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

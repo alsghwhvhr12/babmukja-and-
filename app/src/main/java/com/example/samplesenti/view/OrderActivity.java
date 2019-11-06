@@ -1,29 +1,20 @@
 package com.example.samplesenti.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.samplesenti.R;
-import com.example.samplesenti.model.Menu;
-import com.example.samplesenti.model.Order;
 import com.example.samplesenti.presenter.mOrderListPresenter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class OrderActivity extends AppCompatActivity {
     private ListView lvOrder1;
@@ -90,8 +81,6 @@ public class OrderActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = pref.edit();
                 editor.clear();
                 editor.commit();
-                Intent intent = new Intent(getApplicationContext(),MainMenuAct.class);
-                startActivity(intent);
                 finish();
             }
         });

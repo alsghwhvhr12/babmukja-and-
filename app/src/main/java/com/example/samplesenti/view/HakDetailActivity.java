@@ -83,7 +83,7 @@ public class HakDetailActivity extends AppCompatActivity {
                  Intent intent = new Intent(getApplicationContext(),OrderActivity.class);
                  intent.putExtra("oname",detailHakName.getText().toString());
                  intent.putExtra("oprice",detailHakPrice.getText().toString());
-
+                 finish();
                  startActivity(intent);
   }
     });

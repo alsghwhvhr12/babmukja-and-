@@ -21,7 +21,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class AdminMainActivity extends AppCompatActivity {
-
+    Intent intent = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +35,7 @@ public class AdminMainActivity extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), NoticeRegisterActivity.class);
                         //액티비티 시작
                         startActivity(intent);
+                        finish();
                     }
                 }
         );
@@ -43,6 +44,16 @@ public class AdminMainActivity extends AppCompatActivity {
                 new Button.OnClickListener(){
                     public void onClick(View v) {
                         new BackgroundTask().execute();
+                    }
+                }
+        );
+        Button btn_menu = (Button) findViewById(R.id.nMenu);
+        btn_menu.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v) {
+                        intent = new Intent(getApplicationContext(), CompanyMainActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 }
         );

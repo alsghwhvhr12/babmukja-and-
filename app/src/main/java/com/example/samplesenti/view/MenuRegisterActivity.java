@@ -147,6 +147,7 @@ public class MenuRegisterActivity extends AppCompatActivity implements IMenuRegi
 
                     Intent intent = new Intent(getApplicationContext(),CompanyMainActivity.class);
                     startActivity(intent);
+                    finish();
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "false", Toast.LENGTH_SHORT).show();

@@ -85,6 +85,7 @@ public class NoticeRegisterActivity extends AppCompatActivity implements INotice
 
                     Intent intent = new Intent(getApplicationContext(),AdminMainActivity.class);
                     startActivity(intent);
+                    finish();
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "false", Toast.LENGTH_SHORT).show();

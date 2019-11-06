@@ -47,6 +47,14 @@ public class CompanyMainActivity extends AppCompatActivity {
                     }
                 }
         );
+        Button btn_logout = (Button) findViewById(R.id.cLogout);
+        btn_logout.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v) {
+                        finish();
+                    }
+                }
+        );
     }
 
     class BackgroundTask extends AsyncTask<Void, Void, String> {
@@ -118,6 +126,7 @@ public class CompanyMainActivity extends AppCompatActivity {
                 Intent intent = new Intent(CompanyMainActivity.this, MenuRegisterActivity.class);
                 intent.putExtra("companyList", result);//파싱한 값을 넘겨줌
                 CompanyMainActivity.this.startActivity(intent);//ManagementActivity로 넘어감
+                finish();
             }
 
         }

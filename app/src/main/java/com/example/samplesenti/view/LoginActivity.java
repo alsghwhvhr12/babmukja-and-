@@ -102,6 +102,8 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
 
                     String userNIck = response.getNickname();
 
+                    Intent intent = new Intent(getApplicationContext(),FragmentUser.class);
+                    intent.putExtra("nick", userNIck);
                     goMainMenuActivity();
                 }
 
@@ -215,7 +217,7 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
                                     String pw = jsonObject.getString("pw");
 
                                     Toast.makeText(getApplicationContext(),"성공",Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(LoginActivity.this,MainMenuAct.class);
+                                    Intent intent = new Intent(LoginActivity.this,AdminMainActivity.class);
                                     intent.putExtra("id",id);
                                     intent.putExtra("pw",pw);
                                     Log.d(ServerURL.Tag,"성공");
