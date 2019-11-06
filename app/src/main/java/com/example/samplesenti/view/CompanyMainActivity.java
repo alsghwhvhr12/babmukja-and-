@@ -21,6 +21,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class CompanyMainActivity extends AppCompatActivity {
+    int i = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +33,8 @@ public class CompanyMainActivity extends AppCompatActivity {
         btn_insert.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v) {
-                        //로그인화면
-                        Intent intent = new Intent(getApplicationContext(), MenuRegisterActivity.class);
-                        //액티비티 시작
-                        startActivity(intent);
+                        i=2;
+                        new BackgroundTask().execute();
                     }
                 }
         );
@@ -42,6 +42,7 @@ public class CompanyMainActivity extends AppCompatActivity {
         btn_edit.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v) {
+                        i=1;
                         new BackgroundTask().execute();
                     }
                 }
@@ -54,7 +55,12 @@ public class CompanyMainActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             //List.php은 파싱으로 가져올 웹페이지
-            target = "http://babmukja.pe.kr/menu_list.php";
+            if(i==1) {
+                target = "http://babmukja.pe.kr/menu_list.php";
+            }
+            else if(i==2){
+                target = "http://babmukja.pe.kr/com_list.php";
+            }
         }
 
         @Override
@@ -101,9 +107,18 @@ public class CompanyMainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            Intent intent = new Intent(CompanyMainActivity.this, MenuEditActivity.class);
-            intent.putExtra("menuList", result);//파싱한 값을 넘겨줌
-            CompanyMainActivity.this.startActivity(intent);//ManagementActivity로 넘어감
+            if(i==1) {
+                i=0;
+                Intent intent = new Intent(CompanyMainActivity.this, MenuEditActivity.class);
+                intent.putExtra("menuList", result);//파싱한 값을 넘겨줌
+                CompanyMainActivity.this.startActivity(intent);//ManagementActivity로 넘어감
+            }
+            else if(i==2){
+                i=0;
+                Intent intent = new Intent(CompanyMainActivity.this, MenuRegisterActivity.class);
+                intent.putExtra("companyList", result);//파싱한 값을 넘겨줌
+                CompanyMainActivity.this.startActivity(intent);//ManagementActivity로 넘어감
+            }
 
         }
 

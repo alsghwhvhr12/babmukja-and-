@@ -52,12 +52,12 @@ public class Menu implements Serializable {
         this.k_id = k_id;
     }
 
-    public Menu(String no, String company_no, String price, String name, String k_id){
+    public Menu(String no, String k_id, String company_no, String name, String price){
         this.no = no;
         this.company_no = company_no;
-        this.price = price;
-        this.name = name;
         this.k_id = k_id;
+        this.name = name;
+        this.price = price;
     }
 
 

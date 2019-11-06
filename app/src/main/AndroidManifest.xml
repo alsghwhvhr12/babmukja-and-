@@ -17,7 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+
         <activity android:name=".view.OrderActivity"></activity>
+        <activity android:name=".view.NoticeDetailActivity"></activity>
         <activity android:name=".view.MenuEditActivity" />
         <activity android:name=".view.MenuRegisterActivity" />
         <activity android:name=".view.HakDetailActivity" />
@@ -45,8 +47,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.MapActivity" />
-        <activity android:name=".view.HistoryActivity" />
-        <activity android:name=".view.MylecActivity" />
         <activity android:name=".view.VersionActivity" />
         <activity android:name=".view.NoticeActivity" /> <!-- 카카오톡 메타데이터 -->
         <meta-data

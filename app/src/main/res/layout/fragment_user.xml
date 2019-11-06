@@ -66,22 +66,6 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/history"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:text="이용기록"
-                android:textSize="30sp" />
-
-            <Button
-                android:id="@+id/my"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:text="내정보"
-                android:textSize="30sp" />
-
-            <Button
                 android:id="@+id/version"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

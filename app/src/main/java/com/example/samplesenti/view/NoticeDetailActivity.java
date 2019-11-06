@@ -1,26 +1,37 @@
-//
-//  Created by 이민호, 전재준, 배진우 on 18/09/2019.
-//  Copyright © 2019 이민호. All rights reserved.
-//
-
 package com.example.samplesenti.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.samplesenti.R;
+import com.example.samplesenti.model.Notice;
 
-public class MylecActivity extends AppCompatActivity {
+public class NoticeDetailActivity extends AppCompatActivity {
+
+    private TextView detailNoticeTitle;
+    private TextView detailNoticeN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mylec);
+        setContentView(R.layout.activity_notice_detail);
 
-        Toolbar mToolbar = (Toolbar) findViewById(R.id.mylectb);
+        detailNoticeTitle = (TextView) findViewById(R.id.detailNoticeTitle);
+        detailNoticeN = (TextView) findViewById(R.id.detailNoticeN);
+
+        Intent intent = getIntent();
+
+        Notice notice = (Notice) intent.getSerializableExtra("notice");
+
+        detailNoticeTitle.setText(notice.getTitle());
+        detailNoticeN.setText(notice.getNotice());
+
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.detailneEtb);
         setSupportActionBar(mToolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
