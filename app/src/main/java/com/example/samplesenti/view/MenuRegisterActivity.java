@@ -25,6 +25,7 @@ import com.example.samplesenti.R;
 import com.example.samplesenti.model.mRegister;
 import com.example.samplesenti.presenter.MenuRegisterPresenter;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -40,6 +41,8 @@ public class MenuRegisterActivity extends AppCompatActivity implements IMenuRegi
     public Spinner spinner;
     public Spinner spinner2;
 
+    public ArrayList<String> list3;
+
     public Button mRegBtn;
 
     @Override
@@ -50,6 +53,8 @@ public class MenuRegisterActivity extends AppCompatActivity implements IMenuRegi
         presenter = new MenuRegisterPresenter(MenuRegisterActivity.this, getApplicationContext(),this);
         presenter.presenterView();
 
+        Intent intent = getIntent();
+
         ArrayList<String> list = new ArrayList<>();
         list.add("학식A");
         list.add("학식B");
@@ -58,9 +63,36 @@ public class MenuRegisterActivity extends AppCompatActivity implements IMenuRegi
         list.add("피자굽는오빠");
 
         ArrayList<String> list2 = new ArrayList<>();
-        list2.add("학식");
-        list2.add("민들레뜨락");
-        list2.add("피자굽는오빠");
+        list3 = new ArrayList<>();
+
+        try{
+            //intent로 값을 가져옵니다 이때 JSONObject타입으로 가져옵니다
+            JSONObject jsonObject = new JSONObject(intent.getStringExtra("companyList"));
+
+
+            //List.php 웹페이지에서 response라는 변수명으로 JSON 배열을 만들었음..
+            JSONArray jsonArray = jsonObject.getJSONArray("response");
+            int count = 0;
+
+            String mCompany_no, mName;
+
+            //JSON 배열 길이만큼 반복문을 실행
+            while(count < jsonArray.length()){
+                //count는 배열의 인덱스를 의미
+                JSONObject object = jsonArray.getJSONObject(count);
+
+                mCompany_no = object.getString("no");//여기서 ID가 대문자임을 유의
+                mName = object.getString("name");
+
+                list2.add(mName);//리스트뷰에 값을 추가해줍니다
+                list3.add(mCompany_no);
+                count++;
+            }
+
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
         ArrayAdapter spinnerAdapter;
         spinnerAdapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, list);
@@ -81,7 +113,6 @@ public class MenuRegisterActivity extends AppCompatActivity implements IMenuRegi
         mRegBtn = (Button)findViewById(R.id.mRegBtn);
         mRegBtn.setOnClickListener(this);
         //텍스트
-        mCompany_no=(EditText)findViewById(R.id.mCompany_no);
         mName=(EditText)findViewById(R.id.mName);
         mPrice=(EditText)findViewById(R.id.mPrice);
         spinner=(Spinner)findViewById(R.id.spinner);
@@ -91,7 +122,7 @@ public class MenuRegisterActivity extends AppCompatActivity implements IMenuRegi
     @Override
     public void onClick(View v) {
 
-        final String Company_no = String.valueOf(spinner.getSelectedItemPosition()+1);
+        final String Company_no = list3.get(spinner.getSelectedItemPosition());
         final String Name = mName.getText().toString();
         final String Price = mPrice.getText().toString();
         final String K_id = String.valueOf(spinner2.getSelectedItemPosition()+1);
