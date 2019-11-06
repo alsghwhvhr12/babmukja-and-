@@ -8,6 +8,8 @@ package com.example.samplesenti.presenter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.AdapterView;
+import android.widget.AdapterViewFlipper;
 
 import com.example.samplesenti.model.Login;
 import com.example.samplesenti.view.MainActivity;
@@ -35,7 +37,7 @@ public class RegisterPresenter implements RegisterInterface.Presenter {
     }
 
     @Override
-    public void SignUp(String id, String pw,String name) {
+    public void SignUp(String id, String pw) {
         boolean checkSignUp = login.SignUp(id,pw);
 
         if(checkSignUp){

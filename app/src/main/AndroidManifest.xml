@@ -17,6 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+
+        <activity android:name=".view.OrderActivity"></activity>
         <activity android:name=".view.NoticeDetailActivity"></activity>
         <activity android:name=".view.MenuEditActivity" />
         <activity android:name=".view.MenuRegisterActivity" />
