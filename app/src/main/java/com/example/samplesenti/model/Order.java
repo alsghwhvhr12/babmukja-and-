@@ -10,7 +10,7 @@ public class Order implements Serializable {
     public int getCounnt() {
         return counnt;
     }
-
+    public static final int loadingSecond = 1000;
     public void setCounnt(int counnt) {
         this.counnt = counnt;
     }

@@ -136,7 +136,7 @@ public class HakActivity extends AppCompatActivity {
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.MmeEtb);
         setSupportActionBar(mToolbar);
-
+        getSupportActionBar().setTitle("메뉴판");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 

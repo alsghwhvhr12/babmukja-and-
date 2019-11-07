@@ -39,7 +39,7 @@ public class OrderActivity extends AppCompatActivity {
  //       adapter1 = new mOrderListPresenter(getApplicationContext(), orderList1, this);
         Toolbar mtoolbar = (Toolbar) findViewById(R.id.MmeEtb);
         setSupportActionBar(mtoolbar);
-
+        getSupportActionBar().setTitle("장바구니");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
      //   String name = intent.getStringExtra("oname");
@@ -103,6 +103,8 @@ public class OrderActivity extends AppCompatActivity {
                 his_editor.commit();
                 editor.clear();
                 editor.commit();
+                Intent intent1 = new Intent(getApplicationContext(),LoadingOrder.class);
+                startActivity(intent1);
                 finish();
             }
         });

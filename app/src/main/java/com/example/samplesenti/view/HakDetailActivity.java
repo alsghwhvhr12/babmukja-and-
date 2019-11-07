@@ -49,7 +49,7 @@ public class HakDetailActivity extends AppCompatActivity {
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.detailmeEtb);
         setSupportActionBar(mToolbar);
-
+        getSupportActionBar().setTitle("주문확인");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btnOrder.setOnClickListener(new View.OnClickListener() {
@@ -82,8 +82,8 @@ public class HakDetailActivity extends AppCompatActivity {
                     editor.commit();
                 }
                  Intent intent = new Intent(getApplicationContext(),OrderActivity.class);
-                 intent.putExtra("oname",detailHakName.getText().toString());
-                 intent.putExtra("oprice",detailHakPrice.getText().toString());
+                // intent.putExtra("oname",detailHakName.getText().toString());
+                // intent.putExtra("oprice",detailHakPrice.getText().toString());
                  finish();
                  startActivity(intent);
   }
